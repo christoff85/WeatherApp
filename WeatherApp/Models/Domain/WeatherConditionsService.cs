@@ -23,7 +23,7 @@ namespace WeatherApp.Models.Domain
 
         public WeatherConditions GetConditionsFromWebClient(int cityId)
         {
-            return _repository.FindByCityId(cityId);
+            return _webClient.FindByCityId(cityId);
         }
     }
 }

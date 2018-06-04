@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 using WeatherApp.Models.DAL;
 using WeatherApp.Models.Domain;
+using WeatherApp.Models.WebClient;
 using WeatherApp.ViewModels;
 
 namespace WeatherApp.Controllers
@@ -14,7 +16,8 @@ namespace WeatherApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(), new WeatherConditionsWebClient());
+            var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(), new WeatherConditionsWebClient(new HttpClient()));
+            var result = service.GetConditionsFromWebClient(243432);
             var model = service.FindByCityId(1);
             var viewModel = new WeatherConditionsViewModel
             {
