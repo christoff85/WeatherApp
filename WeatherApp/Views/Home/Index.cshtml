@@ -1,0 +1,27 @@
+﻿@model WeatherApp.ViewModels.WeatherConditionsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        Hi! Todays weather in @Model.Location:
+        
+        <ul>
+            <li>Temp: @Model.Temperature</li>
+            <li>pressure: @Model.Pressure</li>
+            <li>humidity: @Model.Humidity</li>
+            <li>temp_min: @Model.MinTemperature</li>
+            <li>temp_max: @Model.MaxTemperature</li>
+        </ul>
+    </div>
+</body>
+</html>
