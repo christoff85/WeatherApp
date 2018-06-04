@@ -100,8 +100,10 @@
     </Compile>
     <Compile Include="Models\DAL\SqlWeatherConditionsRepository.cs" />
     <Compile Include="Models\Domain\IWeatherConditionsRepository.cs" />
+    <Compile Include="Models\Domain\IWeatherConditionsWebClient.cs" />
     <Compile Include="Models\Domain\WeatherConditionsService.cs" />
     <Compile Include="Models\Domain\WeatherConditions.cs" />
+    <Compile Include="Models\WebClient\WeatherConditionsWebClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\WeatherConditionsViewModel.cs" />
   </ItemGroup>

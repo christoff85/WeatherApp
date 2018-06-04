@@ -14,7 +14,7 @@ namespace WeatherApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var service = new WeatherConditionsService(new SqlWeatherConditionsRepository());
+            var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(), new WeatherConditionsWebClient());
             var model = service.FindByCityId(1);
             var viewModel = new WeatherConditionsViewModel
             {
