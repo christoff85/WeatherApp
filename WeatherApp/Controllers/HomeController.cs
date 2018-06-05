@@ -20,12 +20,12 @@ namespace WeatherApp.Controllers
         {
             var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(""), 
                 new WeatherConditionsWebClient(
-                    new OpenWeatherHttpClient(
-                        new HttpClient(), ConfigurationManager.AppSettings["BaseAddress"], ConfigurationManager.AppSettings["ApiKey"])));
-            var result = service.GetConditionsFromWebClient(243432);
-            var model = service.FindByCityId(1);
+                    new OpenWeatherHttpClient(new HttpClient(), ConfigurationManager.AppSettings["BaseAddress"], ConfigurationManager.AppSettings["ApiKey"]),
+                    new WeatherConditionsJsonDeserializer()));
+            var result = service.GetConditionsFromWebClient(2643743);
+            //var model = service.FindByCityId(1);
 
-            var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(model);
+            var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(result);
 
             return View(viewModel);
         }

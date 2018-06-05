@@ -7,7 +7,7 @@ using WeatherApp.Models.Domain;
 
 namespace WeatherApp.Models.DAL
 {
-    public class SqlWeatherConditionsRepository : SqlRepository<WeatherConditionsEntity>, IWeatherConditionsRepository
+    public class SqlWeatherConditionsRepository : IWeatherConditionsRepository
     {
         private readonly string _connectionString;
 

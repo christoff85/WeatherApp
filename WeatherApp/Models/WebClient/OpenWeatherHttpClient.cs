@@ -26,16 +26,16 @@ namespace WeatherApp.Models.WebClient
             _apiKey = apiKey;
         }
 
-        public async Task<HttpResponseMessage> GetAsync(string path)
+        public HttpResponseMessage Get(string path)
         {
             var fullPath = AppendApiKey(path);
-            return await _httpClient.GetAsync(fullPath);
+            return _httpClient.GetAsync(fullPath).Result;
         }
 
 
         private string AppendApiKey(string path)
         {
-            return path + _apiKey;
+            return String.Format($"{path}&APPID={_apiKey}");
         }
     }
 }

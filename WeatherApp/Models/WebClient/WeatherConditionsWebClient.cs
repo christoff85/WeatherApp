@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Configuration;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Newtonsoft.Json.Linq;
 using WeatherApp.Models.Domain;
 
 namespace WeatherApp.Models.WebClient
@@ -9,26 +11,20 @@ namespace WeatherApp.Models.WebClient
     public class WeatherConditionsWebClient : IWeatherConditionsWebClient
     {
         private readonly IWeatherHttpClient _httpClient;
+        private readonly IWeatherConditionsJsonDeserializer _deserializer;
 
-        public WeatherConditionsWebClient(IWeatherHttpClient httpClient)
+        public WeatherConditionsWebClient(IWeatherHttpClient httpClient, IWeatherConditionsJsonDeserializer deserializer)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            _deserializer = deserializer ?? throw new ArgumentNullException(nameof(deserializer));
         }
 
         public WeatherConditions FindByCityId(int cityId)
         {
-            var response = _httpClient.GetAsync($"weather?id={cityId}");
-            
+            var response = _httpClient.Get($"weather?id={cityId}&units=metric");
+            var responseContent = response.Content.ReadAsStringAsync().Result;
 
-            return new WeatherConditions()
-            {
-                Location = "Warsaw",
-                Temperature = 7,
-                MaxTemperature = 15,
-                MinTemperature = 2,
-                Humidity = 81,
-                Pressure = 1012
-            };
+            return _deserializer.Deserialize(responseContent);
         }
     }
 }

@@ -126,8 +126,10 @@
     <Compile Include="Models\Domain\IWeatherConditionsWebClient.cs" />
     <Compile Include="Models\Domain\WeatherConditionsService.cs" />
     <Compile Include="Models\Domain\WeatherConditions.cs" />
+    <Compile Include="Models\WebClient\IWeatherConditionsJsonDeserializer.cs" />
     <Compile Include="Models\WebClient\IWeatherHttpClient.cs" />
     <Compile Include="Models\WebClient\OpenWeatherHttpClient.cs" />
+    <Compile Include="Models\WebClient\WeatherConditionsJsonDeserializer.cs" />
     <Compile Include="Models\WebClient\WeatherConditionsWebClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\WeatherConditionsViewModel.cs" />
