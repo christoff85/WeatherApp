@@ -3,7 +3,7 @@ using WeatherApp.Models.Domain;
 
 namespace WeatherApp.Models.WebClient
 {
-    public class WeatherConditionsJsonDeserializer : IWeatherConditionsJsonDeserializer
+    public class OpenWeatherConditionsJsonDeserializer : IWeatherConditionsJsonDeserializer
     {
         public WeatherConditions Deserialize(string weatherJsonText)
         {

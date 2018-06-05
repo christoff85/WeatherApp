@@ -131,7 +131,7 @@
     <Compile Include="Models\WebClient\IHttpClient.cs" />
     <Compile Include="Models\WebClient\JsonHttpClient.cs" />
     <Compile Include="Models\WebClient\OpenWeatherPathBuilder.cs" />
-    <Compile Include="Models\WebClient\WeatherConditionsJsonDeserializer.cs" />
+    <Compile Include="Models\WebClient\OpenWeatherConditionsJsonDeserializer.cs" />
     <Compile Include="Models\WebClient\OpenWeatherWebClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\WeatherConditionsViewModel.cs" />
