@@ -1,6 +1,6 @@
 ﻿namespace WeatherApp.Models.DAL
 {
-    public class WeatherConditionsEntity : IEntity
+    public class WeatherConditionsEntity
     {
         public int Id { get; set; }
         public string Location { get; set; }

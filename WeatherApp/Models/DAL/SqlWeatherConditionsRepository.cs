@@ -3,13 +3,10 @@ using WeatherApp.Models.Domain;
 
 namespace WeatherApp.Models.DAL
 {
-    public class SqlWeatherConditionsRepository : IWeatherConditionsRepository
+    public class SqlWeatherConditionsRepository : SqlBaseRepository<WeatherConditions, WeatherConditionsEntity>, IWeatherConditionsRepository
     {
-        private readonly string _connectionString;
-
-        public SqlWeatherConditionsRepository(string connectionString)
+        public SqlWeatherConditionsRepository(WeatherAppContext context) : base(context)
         {
-            _connectionString = connectionString;
         }
 
         public WeatherConditions FindByCityId(int cityId)

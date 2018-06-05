@@ -11,6 +11,11 @@ namespace WeatherApp.Models.Domain
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
+        public WeatherConditions GetById(int id)
+        {
+            return _repository.GetById(id);
+        }
+
         public WeatherConditions FindByCityId(int cityId)
         {
             return _repository.FindByCityId(cityId);

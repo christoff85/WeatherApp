@@ -117,8 +117,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DAL\IEntity.cs" />
-    <Compile Include="Models\DAL\SqlRepository.cs" />
+    <Compile Include="Migrations\201806052215483_InitialMigration.cs" />
+    <Compile Include="Migrations\201806052215483_InitialMigration.Designer.cs">
+      <DependentUpon>201806052215483_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Domain\IRepository.cs" />
+    <Compile Include="Models\DAL\SqlBaseRepository.cs" />
     <Compile Include="Models\DAL\SqlWeatherConditionsRepository.cs" />
     <Compile Include="Models\DAL\WeatherAppContext.cs" />
     <Compile Include="Models\DAL\WeatherConditionsEntity.cs" />
@@ -149,6 +154,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806052215483_InitialMigration.resx">
+      <DependentUpon>201806052215483_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

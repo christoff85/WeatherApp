@@ -14,14 +14,20 @@ namespace WeatherApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(""))
-                ;
+            WeatherConditions model;
+            using (var context = new WeatherAppContext())
+            {
+                var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(context));
+                model = service.GetById(1);
+            }
+                
+                    ;
             var webClient = new OpenWeatherWebClient(
                 new JsonHttpClient(new HttpClient()), new OpenWeatherConditionsJsonDeserializer(), new OpenWeatherPathBuilder(ConfigurationManager.AppSettings["BaseAddress"], ConfigurationManager.AppSettings["ApiKey"]));
             var result = webClient.FindByCityId(2643743);
             //var model = service.FindByCityId(1);
 
-            var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(result);
+            var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(model);
 
             return View(viewModel);
         }
