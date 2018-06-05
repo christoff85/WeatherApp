@@ -13,6 +13,7 @@ namespace WeatherApp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            MapperConfig.Initialize();
         }
     }
 }

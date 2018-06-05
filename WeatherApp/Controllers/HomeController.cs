@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using WeatherApp.Models.DAL;
 using WeatherApp.Models.Domain;
 using WeatherApp.Models.WebClient;
@@ -23,15 +24,8 @@ namespace WeatherApp.Controllers
                         new HttpClient(), ConfigurationManager.AppSettings["BaseAddress"], ConfigurationManager.AppSettings["ApiKey"])));
             var result = service.GetConditionsFromWebClient(243432);
             var model = service.FindByCityId(1);
-            var viewModel = new WeatherConditionsViewModel
-            {
-                Location = model.Location,
-                Temperature = model.Temperature,
-                MaxTemperature = model.MaxTemperature,
-                MinTemperature = model.MinTemperature,
-                Humidity = model.Humidity,
-                Pressure = model.Pressure
-            };
+
+            var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(model);
 
             return View(viewModel);
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using AutoMapper;
 using WeatherApp.Models.Domain;
 
 namespace WeatherApp.Models.DAL
@@ -17,7 +18,7 @@ namespace WeatherApp.Models.DAL
 
         public WeatherConditions FindByCityId(int cityId)
         {
-            return new WeatherConditions()
+            var entity = new WeatherConditionsEntity()
             {
                 Location = "Warsaw",
                 Temperature = 7,
@@ -26,6 +27,8 @@ namespace WeatherApp.Models.DAL
                 Humidity = 81,
                 Pressure = 1012
             };
+
+            return Mapper.Map<WeatherConditionsEntity, WeatherConditions>(entity);
         }
     }
 }
