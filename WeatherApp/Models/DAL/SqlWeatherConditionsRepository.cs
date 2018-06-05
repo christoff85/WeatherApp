@@ -6,8 +6,15 @@ using WeatherApp.Models.Domain;
 
 namespace WeatherApp.Models.DAL
 {
-    public class SqlWeatherConditionsRepository : IWeatherConditionsRepository
+    public class SqlWeatherConditionsRepository : SqlRepository<WeatherConditionsEntity>, IWeatherConditionsRepository
     {
+        private readonly string _connectionString;
+
+        public SqlWeatherConditionsRepository(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
         public WeatherConditions FindByCityId(int cityId)
         {
             return new WeatherConditions()
