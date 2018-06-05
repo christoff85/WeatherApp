@@ -13,6 +13,7 @@ namespace WeatherApp
             {
                 cfg.CreateMap<WeatherConditions, WeatherConditionsViewModel>();
                 cfg.CreateMap<WeatherConditionsEntity, WeatherConditions>();
+                cfg.CreateMap<WeatherConditions, WeatherConditionsEntity>();
             });
         }
     }
