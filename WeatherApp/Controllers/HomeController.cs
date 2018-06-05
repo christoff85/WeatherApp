@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
@@ -16,7 +17,10 @@ namespace WeatherApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(), new WeatherConditionsWebClient(new HttpClient()));
+            var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(""), 
+                new WeatherConditionsWebClient(
+                    new OpenWeatherHttpClient(
+                        new HttpClient(), ConfigurationManager.AppSettings["BaseAddress"], ConfigurationManager.AppSettings["ApiKey"])));
             var result = service.GetConditionsFromWebClient(243432);
             var model = service.FindByCityId(1);
             var viewModel = new WeatherConditionsViewModel
