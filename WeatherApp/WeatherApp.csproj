@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201806060623404_TablesRename.Designer.cs">
       <DependentUpon>201806060623404_TablesRename.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806062140078_UserNameIsUnique.cs" />
+    <Compile Include="Migrations\201806062140078_UserNameIsUnique.Designer.cs">
+      <DependentUpon>201806062140078_UserNameIsUnique.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Data\Configurations\WeatherConditionsEntityConfiguration.cs" />
     <Compile Include="Data\Configurations\UserEntityConfiguration.cs" />
@@ -198,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806060623404_TablesRename.resx">
       <DependentUpon>201806060623404_TablesRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806062140078_UserNameIsUnique.resx">
+      <DependentUpon>201806062140078_UserNameIsUnique.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
