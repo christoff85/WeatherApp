@@ -18,6 +18,13 @@ namespace WeatherApp.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(User user)
+        {
+            return RedirectToAction("Index");
+        }
+
         // GET: Home
         public ActionResult Index()
         {
