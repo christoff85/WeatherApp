@@ -125,7 +125,12 @@
     <Compile Include="Migrations\201806060604013_AddUsers.Designer.cs">
       <DependentUpon>201806060604013_AddUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806060619445_UserTableRestrictions.cs" />
+    <Compile Include="Migrations\201806060619445_UserTableRestrictions.Designer.cs">
+      <DependentUpon>201806060619445_UserTableRestrictions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DAL\Configurations\UserEntityConfiguration.cs" />
     <Compile Include="Models\DAL\SqlUserRepository.cs" />
     <Compile Include="Models\DAL\UserEntity.cs" />
     <Compile Include="Models\Domain\IRepository.cs" />
@@ -171,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806060604013_AddUsers.resx">
       <DependentUpon>201806060604013_AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806060619445_UserTableRestrictions.resx">
+      <DependentUpon>201806060619445_UserTableRestrictions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
