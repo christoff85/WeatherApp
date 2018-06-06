@@ -2,7 +2,7 @@
 
 namespace WeatherApp.Models.Domain
 {
-    public class WeatherConditionsService
+    public class WeatherConditionsService : IWeatherConditionsService
     {
         private readonly IWeatherConditionsRepository _repository;
 

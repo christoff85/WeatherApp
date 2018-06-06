@@ -127,8 +127,12 @@
     <Compile Include="Models\DAL\SqlWeatherConditionsRepository.cs" />
     <Compile Include="Models\DAL\WeatherAppContext.cs" />
     <Compile Include="Models\DAL\WeatherConditionsEntity.cs" />
+    <Compile Include="Models\Domain\IUserRepository.cs" />
+    <Compile Include="Models\Domain\IUserService.cs" />
     <Compile Include="Models\Domain\IWeatherConditionsRepository.cs" />
+    <Compile Include="Models\Domain\IWeatherConditionsService.cs" />
     <Compile Include="Models\Domain\IWeatherConditionsWebClient.cs" />
+    <Compile Include="Models\Domain\User.cs" />
     <Compile Include="Models\Domain\WeatherConditionsService.cs" />
     <Compile Include="Models\Domain\WeatherConditions.cs" />
     <Compile Include="Models\WebClient\IWeatherPathBuilder.cs" />

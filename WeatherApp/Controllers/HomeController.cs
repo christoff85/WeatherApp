@@ -25,7 +25,6 @@ namespace WeatherApp.Controllers
             var webClient = new OpenWeatherWebClient(
                 new JsonHttpClient(new HttpClient()), new OpenWeatherConditionsJsonDeserializer(), new OpenWeatherPathBuilder(ConfigurationManager.AppSettings["BaseAddress"], ConfigurationManager.AppSettings["ApiKey"]));
             var result = webClient.FindByCityId(2643743);
-            //var model = service.FindByCityId(1);
 
             var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(model);
 
