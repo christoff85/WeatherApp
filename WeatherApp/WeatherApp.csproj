@@ -122,6 +122,8 @@
       <DependentUpon>201806052215483_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DAL\SqlUserRepository.cs" />
+    <Compile Include="Models\DAL\UserEntity.cs" />
     <Compile Include="Models\Domain\IRepository.cs" />
     <Compile Include="Models\DAL\SqlBaseRepository.cs" />
     <Compile Include="Models\DAL\SqlWeatherConditionsRepository.cs" />
