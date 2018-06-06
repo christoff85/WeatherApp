@@ -1,4 +1,6 @@
-﻿namespace WeatherApp.Models.Domain
+﻿using WeatherApp.Domain.Models;
+
+namespace WeatherApp.Domain.Abstractions
 {
     public interface IWeatherConditionsService
     {

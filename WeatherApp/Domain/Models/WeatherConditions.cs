@@ -1,4 +1,4 @@
-﻿namespace WeatherApp.Models.Domain
+﻿namespace WeatherApp.Domain.Models
 {
     public class WeatherConditions
     {

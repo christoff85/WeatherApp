@@ -1,4 +1,4 @@
-﻿namespace WeatherApp.Models.WebClient
+﻿namespace WeatherApp.WebServices.WebClient
 {
     public interface IWeatherPathBuilder
     {

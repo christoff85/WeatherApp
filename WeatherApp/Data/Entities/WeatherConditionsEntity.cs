@@ -1,4 +1,4 @@
-﻿namespace WeatherApp.Models.DAL
+﻿namespace WeatherApp.Data.Entities
 {
     public class WeatherConditionsEntity
     {

@@ -2,10 +2,12 @@
 using System.Net.Http;
 using System.Web.Mvc;
 using AutoMapper;
-using WeatherApp.Models.DAL;
-using WeatherApp.Models.Domain;
-using WeatherApp.Models.WebClient;
+using WeatherApp.Data;
+using WeatherApp.Data.Repositories;
+using WeatherApp.Domain.Models;
+using WeatherApp.Domain.Services;
 using WeatherApp.ViewModels;
+using WeatherApp.WebServices.WebClient;
 
 namespace WeatherApp.Controllers
 {

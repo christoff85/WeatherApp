@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity.ModelConfiguration;
+using WeatherApp.Data.Entities;
 
-namespace WeatherApp.Models.DAL.Configurations
+namespace WeatherApp.Data.Configurations
 {
     public class UserEntityConfiguration : EntityTypeConfiguration<UserEntity>
     {

@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
-using WeatherApp.Models.Domain;
+using WeatherApp.Data.Entities;
+using WeatherApp.Domain.Abstractions;
+using WeatherApp.Domain.Models;
 
-namespace WeatherApp.Models.DAL
+namespace WeatherApp.Data.Repositories
 {
     public class SqlWeatherConditionsRepository : SqlBaseRepository<WeatherConditions, WeatherConditionsEntity>, IWeatherConditionsRepository
     {

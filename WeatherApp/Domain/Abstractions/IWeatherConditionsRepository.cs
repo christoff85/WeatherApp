@@ -1,6 +1,6 @@
-﻿using WeatherApp.Models.DAL;
+﻿using WeatherApp.Domain.Models;
 
-namespace WeatherApp.Models.Domain
+namespace WeatherApp.Domain.Abstractions
 {
     public interface IWeatherConditionsRepository : IRepository<WeatherConditions>
     {

@@ -1,7 +1,8 @@
 ﻿using System.Data.Entity;
-using WeatherApp.Models.DAL.Configurations;
+using WeatherApp.Data.Configurations;
+using WeatherApp.Data.Entities;
 
-namespace WeatherApp.Models.DAL
+namespace WeatherApp.Data
 {
     public class WeatherAppContext : DbContext
     {

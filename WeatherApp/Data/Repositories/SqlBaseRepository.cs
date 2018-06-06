@@ -2,9 +2,9 @@
 using System.Data.Entity;
 using System.Linq;
 using AutoMapper;
-using WeatherApp.Models.Domain;
+using WeatherApp.Domain.Abstractions;
 
-namespace WeatherApp.Models.DAL
+namespace WeatherApp.Data.Repositories
 {
     public abstract class SqlBaseRepository<TModel, TEntity> : IRepository<TModel> where TEntity : class
     {

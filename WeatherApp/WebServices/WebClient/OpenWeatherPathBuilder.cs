@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeatherApp.Models.WebClient
+namespace WeatherApp.WebServices.WebClient
 {
     public class OpenWeatherPathBuilder : IWeatherPathBuilder
     {

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using WeatherApp.Models.DAL;
-using WeatherApp.Models.Domain;
+using WeatherApp.Data.Entities;
+using WeatherApp.Domain.Models;
 using WeatherApp.ViewModels;
 
 namespace WeatherApp

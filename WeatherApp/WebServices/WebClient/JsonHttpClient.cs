@@ -1,8 +1,7 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace WeatherApp.Models.WebClient
+namespace WeatherApp.WebServices.WebClient
 {
     public class JsonHttpClient : IHttpClient
     {

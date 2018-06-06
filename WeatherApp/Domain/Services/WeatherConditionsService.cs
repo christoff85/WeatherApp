@@ -1,6 +1,8 @@
 ﻿using System;
+using WeatherApp.Domain.Abstractions;
+using WeatherApp.Domain.Models;
 
-namespace WeatherApp.Models.Domain
+namespace WeatherApp.Domain.Services
 {
     public class WeatherConditionsService : IWeatherConditionsService
     {

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WeatherApp.Models.Domain
+﻿namespace WeatherApp.Data.Entities
 {
-    public class User
+    public class UserEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

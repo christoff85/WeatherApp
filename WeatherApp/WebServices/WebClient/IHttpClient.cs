@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace WeatherApp.Models.WebClient
+namespace WeatherApp.WebServices.WebClient
 {
     public interface IHttpClient
     {

@@ -1,9 +1,10 @@
 ﻿using System;
-using WeatherApp.Models.Domain;
+using WeatherApp.Domain.Abstractions;
+using WeatherApp.Domain.Models;
 
-namespace WeatherApp.Models.WebClient
+namespace WeatherApp.WebServices.WebClient
 {
-    public class OpenWeatherWebClient : IWeatherConditionsWebClient
+    public class OpenWeatherWebClient : IWeatherConditionsProvider
     {
         private readonly IHttpClient _httpClient;
         private readonly IWeatherConditionsJsonDeserializer _deserializer;

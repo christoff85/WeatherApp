@@ -1,6 +1,6 @@
-﻿using WeatherApp.Models.Domain;
+﻿using WeatherApp.Domain.Models;
 
-namespace WeatherApp.Models.WebClient
+namespace WeatherApp.WebServices.WebClient
 {
     public interface IWeatherConditionsJsonDeserializer
     {
