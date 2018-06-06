@@ -129,7 +129,12 @@
     <Compile Include="Migrations\201806060619445_UserTableRestrictions.Designer.cs">
       <DependentUpon>201806060619445_UserTableRestrictions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806060623404_TablesRename.cs" />
+    <Compile Include="Migrations\201806060623404_TablesRename.Designer.cs">
+      <DependentUpon>201806060623404_TablesRename.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DAL\Configurations\WeatherConditionsEntityConfiguration.cs" />
     <Compile Include="Models\DAL\Configurations\UserEntityConfiguration.cs" />
     <Compile Include="Models\DAL\SqlUserRepository.cs" />
     <Compile Include="Models\DAL\UserEntity.cs" />
@@ -179,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806060619445_UserTableRestrictions.resx">
       <DependentUpon>201806060619445_UserTableRestrictions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806060623404_TablesRename.resx">
+      <DependentUpon>201806060623404_TablesRename.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

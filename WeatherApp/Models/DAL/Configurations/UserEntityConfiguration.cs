@@ -10,6 +10,8 @@ namespace WeatherApp.Models.DAL.Configurations
     {
         public UserEntityConfiguration()
         {
+            ToTable("Users");
+
             Property(p => p.Name)
                 .IsRequired()
                 .HasMaxLength(50);

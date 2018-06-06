@@ -14,6 +14,8 @@ namespace WeatherApp.Models.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserEntityConfiguration());
+            modelBuilder.Configurations.Add(new WeatherConditionsEntityConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }
