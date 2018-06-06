@@ -121,6 +121,10 @@
     <Compile Include="Migrations\201806052215483_InitialMigration.Designer.cs">
       <DependentUpon>201806052215483_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806060604013_AddUsers.cs" />
+    <Compile Include="Migrations\201806060604013_AddUsers.Designer.cs">
+      <DependentUpon>201806060604013_AddUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DAL\SqlUserRepository.cs" />
     <Compile Include="Models\DAL\UserEntity.cs" />
@@ -164,6 +168,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806052215483_InitialMigration.resx">
       <DependentUpon>201806052215483_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806060604013_AddUsers.resx">
+      <DependentUpon>201806060604013_AddUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -8,6 +8,7 @@ namespace WeatherApp.Models.DAL
         { 
         }
         public DbSet<WeatherConditionsEntity> WeatherConditions { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
 
     }
 }
