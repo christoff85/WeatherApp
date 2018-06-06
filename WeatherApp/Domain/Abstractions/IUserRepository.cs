@@ -2,7 +2,9 @@
 
 namespace WeatherApp.Domain.Abstractions
 {
-    interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
+        bool UserNameExists(string userName);
+        User GetUserByUserName(string userName);
     }
 }

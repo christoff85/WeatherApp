@@ -10,5 +10,6 @@ namespace WeatherApp.Domain.Abstractions
         IEnumerable<TModel> Get();
         TModel GetById(int id);
         void Update(TModel domainModel);
+        void SaveChanges();
     }
 }

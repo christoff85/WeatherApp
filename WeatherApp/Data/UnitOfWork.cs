@@ -1,13 +1,12 @@
-﻿using System.Data.Entity;
-using WeatherApp.Domain.Abstractions;
+﻿using WeatherApp.Domain.Abstractions;
 
 namespace WeatherApp.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DbContext _context;
+        private readonly WeatherAppContext _context;
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(WeatherAppContext context)
         {
             _context = context;
         }

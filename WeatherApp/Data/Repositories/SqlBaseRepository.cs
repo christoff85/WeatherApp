@@ -62,6 +62,11 @@ namespace WeatherApp.Data.Repositories
             Context.Entry(entity).State = EntityState.Modified;
         }
 
+        public void SaveChanges()
+        {
+            Context.SaveChanges();
+        }
+
         protected TModel MapFromEntity(TEntity entity)
         {
             return Mapper.Map<TEntity, TModel>(entity);
