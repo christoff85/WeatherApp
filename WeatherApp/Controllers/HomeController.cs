@@ -11,13 +11,13 @@ namespace WeatherApp.Controllers
     {
         private readonly IUserService _userService;
         private readonly IWeatherConditionsService _weatherService;
-        private readonly IWeatherConditionsProvider _weatherProvider;
+        
 
         public HomeController(IUserService userService, IWeatherConditionsService weatherService, IWeatherConditionsProvider weatherProvider)
         {
             _userService = userService ?? throw new ArgumentNullException(nameof(userService));
             _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
-            _weatherProvider = weatherProvider ?? throw new ArgumentNullException(nameof(weatherProvider));
+            
         }
         public ActionResult Login()
         {
@@ -36,7 +36,7 @@ namespace WeatherApp.Controllers
         public ActionResult Index()
         {
             var model = _weatherService.GetById(1);
-            var result = _weatherProvider.FindByCityId(2643743);
+            var result = _weatherService.GetCurrentWeather(2643743);
 
             var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(result);
 

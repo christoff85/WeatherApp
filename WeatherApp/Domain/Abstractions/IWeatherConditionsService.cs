@@ -4,7 +4,8 @@ namespace WeatherApp.Domain.Abstractions
 {
     public interface IWeatherConditionsService
     {
-        WeatherConditions FindByCityId(int cityId);
+        WeatherConditions GetLastStoredWeather(int cityId);
         WeatherConditions GetById(int id);
+        WeatherConditions GetCurrentWeather(int cityId);
     }
 }
