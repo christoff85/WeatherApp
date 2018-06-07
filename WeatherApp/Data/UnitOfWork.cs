@@ -1,5 +1,4 @@
-﻿using WeatherApp.Domain.Abstractions;
-using WeatherApp.Domain.Abstractions.Data;
+﻿using WeatherApp.Domain.Abstractions.Data;
 
 namespace WeatherApp.Data
 {

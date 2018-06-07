@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
 using AutoMapper;
-using WeatherApp.Domain.Abstractions;
 using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Abstractions.Services;
 using WeatherApp.Domain.Models;
@@ -12,10 +11,10 @@ namespace WeatherApp.Controllers
     public class HomeController : Controller
     {
         private readonly IUserService _userService;
-        private readonly IWeatherConditionsService _weatherService;
+        private readonly IWeatherService _weatherService;
         
 
-        public HomeController(IUserService userService, IWeatherConditionsService weatherService, IWeatherConditionsProvider weatherProvider)
+        public HomeController(IUserService userService, IWeatherService weatherService, IWeatherProvider weatherProvider)
         {
             _userService = userService ?? throw new ArgumentNullException(nameof(userService));
             _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
@@ -40,7 +39,7 @@ namespace WeatherApp.Controllers
             var model = _weatherService.GetById(1);
             var result = _weatherService.GetCurrentWeather(2643743);
 
-            var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(result);
+            var viewModel = Mapper.Map<Weather, WeatherViewModel>(result);
 
             return View(viewModel);
         }

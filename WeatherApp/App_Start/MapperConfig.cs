@@ -11,9 +11,9 @@ namespace WeatherApp
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<WeatherConditions, WeatherConditionsViewModel>();
-                cfg.CreateMap<WeatherConditionsEntity, WeatherConditions>();
-                cfg.CreateMap<WeatherConditions, WeatherConditionsEntity>();
+                cfg.CreateMap<Weather, WeatherViewModel>();
+                cfg.CreateMap<WeatherConditionsEntity, Weather>();
+                cfg.CreateMap<Weather, WeatherConditionsEntity>();
 
                 cfg.CreateMap<User, UserEntity>();
                 cfg.CreateMap<UserEntity, User>();

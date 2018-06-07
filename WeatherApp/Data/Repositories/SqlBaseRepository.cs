@@ -2,7 +2,6 @@
 using System.Data.Entity;
 using System.Linq;
 using AutoMapper;
-using WeatherApp.Domain.Abstractions;
 using WeatherApp.Domain.Abstractions.Data;
 
 namespace WeatherApp.Data.Repositories

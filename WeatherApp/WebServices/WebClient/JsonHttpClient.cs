@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Headers;
+using WeatherApp.WebServices.WebClient.Abstractions;
 
 namespace WeatherApp.WebServices.WebClient
 {

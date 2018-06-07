@@ -1,24 +1,24 @@
 ﻿using System;
-using WeatherApp.Domain.Abstractions;
 using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Models;
+using WeatherApp.WebServices.WebClient.Abstractions;
 
 namespace WeatherApp.WebServices.WebClient
 {
-    public class OpenWeatherWebClient : IWeatherConditionsProvider
+    public class OpenWeatherWebClient : IWeatherProvider
     {
         private readonly IHttpClient _httpClient;
-        private readonly IWeatherConditionsJsonDeserializer _deserializer;
+        private readonly IWeatherJsonDeserializer _deserializer;
         private readonly IWeatherPathBuilder _pathBuilder;
 
-        public OpenWeatherWebClient(IHttpClient httpClient, IWeatherConditionsJsonDeserializer deserializer, IWeatherPathBuilder pathBuilder)
+        public OpenWeatherWebClient(IHttpClient httpClient, IWeatherJsonDeserializer deserializer, IWeatherPathBuilder pathBuilder)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _deserializer = deserializer ?? throw new ArgumentNullException(nameof(deserializer));
             _pathBuilder = pathBuilder ?? throw new ArgumentNullException(nameof(pathBuilder));
         }
 
-        public WeatherConditions FindByCityId(int cityId)
+        public Weather FindByCityId(int cityId)
         {
             var query = $"weather?id={cityId}&units=metric";
             var fullPath = _pathBuilder.GetFullPath(query);

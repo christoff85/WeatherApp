@@ -1,4 +1,5 @@
 ﻿using System;
+using WeatherApp.WebServices.WebClient.Abstractions;
 
 namespace WeatherApp.WebServices.WebClient
 {

@@ -2,8 +2,8 @@
 
 namespace WeatherApp.Domain.Abstractions.Providers
 {
-    public interface IWeatherConditionsProvider
+    public interface IWeatherProvider
     {
-        WeatherConditions FindByCityId(int cityId);
+        Weather FindByCityId(int cityId);
     }
 }

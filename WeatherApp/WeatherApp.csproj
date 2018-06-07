@@ -172,21 +172,21 @@
     <Compile Include="Data\Entities\WeatherConditionsEntity.cs" />
     <Compile Include="Domain\Abstractions\Data\IUserRepository.cs" />
     <Compile Include="Domain\Abstractions\Services\IUserService.cs" />
-    <Compile Include="Domain\Abstractions\Data\IWeatherConditionsRepository.cs" />
-    <Compile Include="Domain\Abstractions\Services\IWeatherConditionsService.cs" />
-    <Compile Include="Domain\Abstractions\Providers\IWeatherConditionsProvider.cs" />
+    <Compile Include="Domain\Abstractions\Data\IWeatherRepository.cs" />
+    <Compile Include="Domain\Abstractions\Services\IWeatherService.cs" />
+    <Compile Include="Domain\Abstractions\Providers\IWeatherProvider.cs" />
     <Compile Include="Domain\Models\User.cs" />
-    <Compile Include="Domain\Services\WeatherConditionsService.cs" />
-    <Compile Include="Domain\Models\WeatherConditions.cs" />
-    <Compile Include="WebServices\WebClient\IWeatherPathBuilder.cs" />
-    <Compile Include="WebServices\WebClient\IWeatherConditionsJsonDeserializer.cs" />
-    <Compile Include="WebServices\WebClient\IHttpClient.cs" />
+    <Compile Include="Domain\Services\WeatherService.cs" />
+    <Compile Include="Domain\Models\Weather.cs" />
+    <Compile Include="WebServices\WebClient\Abstractions\IWeatherPathBuilder.cs" />
+    <Compile Include="WebServices\WebClient\Abstractions\IWeatherJsonDeserializer.cs" />
+    <Compile Include="WebServices\WebClient\Abstractions\IHttpClient.cs" />
     <Compile Include="WebServices\WebClient\JsonHttpClient.cs" />
     <Compile Include="WebServices\WebClient\OpenWeatherPathBuilder.cs" />
-    <Compile Include="WebServices\WebClient\OpenWeatherConditionsJsonDeserializer.cs" />
+    <Compile Include="WebServices\WebClient\OpenWeatherJsonDeserializer.cs" />
     <Compile Include="WebServices\WebClient\OpenWeatherWebClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\WeatherConditionsViewModel.cs" />
+    <Compile Include="ViewModels\WeatherViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

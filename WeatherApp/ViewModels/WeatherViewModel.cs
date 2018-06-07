@@ -1,6 +1,6 @@
 ﻿namespace WeatherApp.ViewModels
 {
-    public class WeatherConditionsViewModel
+    public class WeatherViewModel
     {
         public string Location { get; set; }
         public int Temperature { get; set; }

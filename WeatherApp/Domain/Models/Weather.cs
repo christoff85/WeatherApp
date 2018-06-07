@@ -1,6 +1,6 @@
 ﻿namespace WeatherApp.Domain.Models
 {
-    public class WeatherConditions
+    public class Weather
     {
         public string Location { get; set; }
         public int Temperature { get; set; }

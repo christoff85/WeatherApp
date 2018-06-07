@@ -1,5 +1,4 @@
 ﻿using System;
-using WeatherApp.Domain.Abstractions;
 using WeatherApp.Domain.Abstractions.Data;
 using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Abstractions.Services;
@@ -7,28 +6,28 @@ using WeatherApp.Domain.Models;
 
 namespace WeatherApp.Domain.Services
 {
-    public class WeatherConditionsService : IWeatherConditionsService
+    public class WeatherService : IWeatherService
     {
-        private readonly IWeatherConditionsRepository _repository;
-        private readonly IWeatherConditionsProvider _provider;
+        private readonly IWeatherRepository _repository;
+        private readonly IWeatherProvider _provider;
 
-        public WeatherConditionsService(IWeatherConditionsRepository repository, IWeatherConditionsProvider provider)
+        public WeatherService(IWeatherRepository repository, IWeatherProvider provider)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _provider = provider ?? throw new ArgumentNullException(nameof(provider));
         }
 
-        public WeatherConditions GetById(int id)
+        public Weather GetById(int id)
         {
             return _repository.GetById(id);
         }
 
-        public WeatherConditions GetLastStoredWeather(int cityId)
+        public Weather GetLastStoredWeather(int cityId)
         {
             return _repository.FindByCityId(cityId);
         }
 
-        public WeatherConditions GetCurrentWeather(int cityId)
+        public Weather GetCurrentWeather(int cityId)
         {
             return _provider.FindByCityId(cityId);
         }

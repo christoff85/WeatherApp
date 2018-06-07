@@ -1,16 +1,17 @@
 ﻿using Newtonsoft.Json.Linq;
 using WeatherApp.Domain.Models;
+using WeatherApp.WebServices.WebClient.Abstractions;
 
 namespace WeatherApp.WebServices.WebClient
 {
-    public class OpenWeatherConditionsJsonDeserializer : IWeatherConditionsJsonDeserializer
+    public class OpenWeatherJsonDeserializer : IWeatherJsonDeserializer
     {
-        public WeatherConditions Deserialize(string weatherJsonText)
+        public Weather Deserialize(string weatherJsonText)
         {
             var weatherJson = JObject.Parse(weatherJsonText);
             var currentWeather = weatherJson["main"];
 
-            return new WeatherConditions()
+            return new Weather()
             {
                 Location = weatherJson["name"].ToObject<string>(),
                 Temperature = currentWeather["temp"].ToObject<int>(),

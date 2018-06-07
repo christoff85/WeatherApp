@@ -1,5 +1,4 @@
 ﻿using System;
-using WeatherApp.Domain.Abstractions;
 using WeatherApp.Domain.Abstractions.Data;
 using WeatherApp.Domain.Abstractions.Services;
 using WeatherApp.Domain.Models;

@@ -1,18 +1,17 @@
 ﻿using AutoMapper;
 using WeatherApp.Data.Entities;
-using WeatherApp.Domain.Abstractions;
 using WeatherApp.Domain.Abstractions.Data;
 using WeatherApp.Domain.Models;
 
 namespace WeatherApp.Data.Repositories
 {
-    public class SqlWeatherConditionsRepository : SqlBaseRepository<WeatherConditions, WeatherConditionsEntity>, IWeatherConditionsRepository
+    public class SqlWeatherConditionsRepository : SqlBaseRepository<Weather, WeatherConditionsEntity>, IWeatherRepository
     {
         public SqlWeatherConditionsRepository(WeatherAppContext context) : base(context)
         {
         }
 
-        public WeatherConditions FindByCityId(int cityId)
+        public Weather FindByCityId(int cityId)
         {
             var entity = new WeatherConditionsEntity()
             {
@@ -24,7 +23,7 @@ namespace WeatherApp.Data.Repositories
                 Pressure = 1012
             };
 
-            return Mapper.Map<WeatherConditionsEntity, WeatherConditions>(entity);
+            return Mapper.Map<WeatherConditionsEntity, Weather>(entity);
         }
     }
 }
