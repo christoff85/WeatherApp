@@ -5,6 +5,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using WeatherApp.Data;
 using WeatherApp.Domain.Abstractions;
+using WeatherApp.Domain.Abstractions.Services;
 using WeatherApp.WebServices.WebClient;
 
 namespace WeatherApp

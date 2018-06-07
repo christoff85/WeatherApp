@@ -1,6 +1,6 @@
 ﻿using WeatherApp.Domain.Models;
 
-namespace WeatherApp.Domain.Abstractions
+namespace WeatherApp.Domain.Abstractions.Providers
 {
     public interface IWeatherConditionsProvider
     {

@@ -135,7 +135,7 @@
       <DependentUpon>201806070511121_MoveMigrationFolder.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
-    <Compile Include="Domain\Abstractions\IUnitOfWork.cs" />
+    <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,16 +165,16 @@
     <Compile Include="Data\Configurations\UserEntityConfiguration.cs" />
     <Compile Include="Data\Repositories\SqlUserRepository.cs" />
     <Compile Include="Data\Entities\UserEntity.cs" />
-    <Compile Include="Domain\Abstractions\IRepository.cs" />
+    <Compile Include="Domain\Abstractions\Data\IRepository.cs" />
     <Compile Include="Data\Repositories\SqlBaseRepository.cs" />
     <Compile Include="Data\Repositories\SqlWeatherConditionsRepository.cs" />
     <Compile Include="Data\WeatherAppContext.cs" />
     <Compile Include="Data\Entities\WeatherConditionsEntity.cs" />
-    <Compile Include="Domain\Abstractions\IUserRepository.cs" />
-    <Compile Include="Domain\Abstractions\IUserService.cs" />
-    <Compile Include="Domain\Abstractions\IWeatherConditionsRepository.cs" />
-    <Compile Include="Domain\Abstractions\IWeatherConditionsService.cs" />
-    <Compile Include="Domain\Abstractions\IWeatherConditionsProvider.cs" />
+    <Compile Include="Domain\Abstractions\Data\IUserRepository.cs" />
+    <Compile Include="Domain\Abstractions\Services\IUserService.cs" />
+    <Compile Include="Domain\Abstractions\Data\IWeatherConditionsRepository.cs" />
+    <Compile Include="Domain\Abstractions\Services\IWeatherConditionsService.cs" />
+    <Compile Include="Domain\Abstractions\Providers\IWeatherConditionsProvider.cs" />
     <Compile Include="Domain\Models\User.cs" />
     <Compile Include="Domain\Services\WeatherConditionsService.cs" />
     <Compile Include="Domain\Models\WeatherConditions.cs" />

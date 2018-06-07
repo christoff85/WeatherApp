@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WeatherApp.Domain.Abstractions
+namespace WeatherApp.Domain.Abstractions.Data
 {
     public interface IRepository<TModel>
     {

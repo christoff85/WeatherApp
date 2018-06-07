@@ -1,5 +1,6 @@
 ﻿using System;
 using WeatherApp.Domain.Abstractions;
+using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Models;
 
 namespace WeatherApp.WebServices.WebClient

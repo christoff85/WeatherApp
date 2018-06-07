@@ -1,6 +1,6 @@
 ﻿using WeatherApp.Domain.Models;
 
-namespace WeatherApp.Domain.Abstractions
+namespace WeatherApp.Domain.Abstractions.Data
 {
     public interface IWeatherConditionsRepository : IRepository<WeatherConditions>
     {

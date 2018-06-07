@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using AutoMapper;
 using WeatherApp.Domain.Abstractions;
+using WeatherApp.Domain.Abstractions.Providers;
+using WeatherApp.Domain.Abstractions.Services;
 using WeatherApp.Domain.Models;
 using WeatherApp.ViewModels;
 

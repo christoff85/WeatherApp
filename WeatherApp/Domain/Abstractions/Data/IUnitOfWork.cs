@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeatherApp.Domain.Abstractions
+namespace WeatherApp.Domain.Abstractions.Data
 {
     public interface IUnitOfWork : IDisposable
     {

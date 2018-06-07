@@ -1,5 +1,8 @@
 ﻿using System;
 using WeatherApp.Domain.Abstractions;
+using WeatherApp.Domain.Abstractions.Data;
+using WeatherApp.Domain.Abstractions.Providers;
+using WeatherApp.Domain.Abstractions.Services;
 using WeatherApp.Domain.Models;
 
 namespace WeatherApp.Domain.Services

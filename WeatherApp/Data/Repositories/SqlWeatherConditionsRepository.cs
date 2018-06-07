@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using WeatherApp.Data.Entities;
 using WeatherApp.Domain.Abstractions;
+using WeatherApp.Domain.Abstractions.Data;
 using WeatherApp.Domain.Models;
 
 namespace WeatherApp.Data.Repositories
