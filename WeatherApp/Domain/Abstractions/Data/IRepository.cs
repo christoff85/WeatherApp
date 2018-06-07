@@ -6,9 +6,8 @@ namespace WeatherApp.Domain.Abstractions.Data
     {
         void Create(TModel entity);
         void Delete(object id);
-        void Delete(TModel domainModel);
         IEnumerable<TModel> Get();
         TModel GetById(int id);
-        void Update(TModel domainModel);
+        void Update(TModel domainModel, int id);
     }
 }

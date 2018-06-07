@@ -37,29 +37,19 @@ namespace WeatherApp.Data.Repositories
         public virtual void Delete(object id)
         {
             var entity = Entities.Find(id);
-            Delete(entity);
-        }
 
-        public virtual void Delete(TModel domainModel)
-        {
-            var entity = MapFromModel(domainModel);
-            Delete(entity);
-        }
-
-        protected virtual void Delete(TEntity entity)
-        {
             if (Context.Entry(entity).State == EntityState.Detached)
                 Entities.Attach(entity);
 
             Entities.Remove(entity);
         }
 
-        public virtual void Update(TModel domainModel)
+        public virtual void Update(TModel domainModel, int entityId)
         {
-            var entity = MapFromModel(domainModel);
+            var updated = MapFromModel(domainModel);
 
-            Entities.Attach(entity);
-            Context.Entry(entity).State = EntityState.Modified;
+            TEntity existing = Entities.Find(entityId);
+            Context.Entry(existing).CurrentValues.SetValues(updated);
         }
 
         protected TModel MapFromEntity(TEntity entity)

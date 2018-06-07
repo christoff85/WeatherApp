@@ -11,9 +11,15 @@ namespace WeatherApp.Data.Repositories
         {
         }
 
+        public User GetSingleOrDefault(string userName, string password)
+        {
+            var entity = Entities.SingleOrDefault(u => u.UserName.Equals(userName) && u.Password.Equals(password));
+            return MapFromEntity(entity);
+        }
+
         public bool UserNameExists(string userName)
         {
-            return Entities.Any(u => u.UserName == userName);
+            return Entities.Any(u => u.UserName.Equals(userName));
         }
 
         public User GetUserByUserName(string userName)

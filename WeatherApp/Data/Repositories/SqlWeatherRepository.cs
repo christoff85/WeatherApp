@@ -17,9 +17,9 @@ namespace WeatherApp.Data.Repositories
             return Entities.Any(w => w.CityId == cityId);
         }
 
-        public Weather GetWeatherByCityId(int cityId)
+        public Weather GetSingleOrDefault(int cityId)
         {
-            var entity = Entities.Single(w => w.CityId == cityId);
+            var entity = Entities.SingleOrDefault(w => w.CityId == cityId);
             return MapFromEntity(entity);
         }
     }
