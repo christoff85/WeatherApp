@@ -2,6 +2,7 @@
 {
     public class Weather
     {
+        public int Id { get; set; }
         public string Location { get; set; }
         public int CityId { get; set; }
         public int Temperature { get; set; }
