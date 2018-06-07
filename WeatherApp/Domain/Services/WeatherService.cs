@@ -26,21 +26,18 @@ namespace WeatherApp.Domain.Services
 
         public Weather GetLastStoredWeather(int cityId)
         {
-            return _repository.GetWeatherByCityId(cityId);
+            return _repository.GetSingleOrDefault(cityId);
         }
 
-        public Weather GetCurrentWeather(int cityId)
+        public Weather GetCurrentWeather(Weather weather)
         {
-            var weather = _provider.FindByCityId(cityId);
+            var updatedWeather = _provider.FindByCityId(weather.CityId);
+            updatedWeather.Id = weather.Id;
 
-            if (_repository.WeatherExists(cityId))
-                _repository.Update(weather);
-            else
-                _repository.Create(weather);
-
+            _repository.Update(updatedWeather, weather.Id);
             _unitOfWork.SaveChanges();
 
-            return _repository.GetWeatherByCityId(cityId);
+            return updatedWeather;
         }
     }
 }
