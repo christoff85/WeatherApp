@@ -9,13 +9,13 @@ namespace WeatherApp.Data
         public WeatherAppContext() : base("WeatherAppContext")
         { 
         }
-        public DbSet<WeatherConditionsEntity> WeatherConditions { get; set; }
+        public DbSet<WeatherEntity> WeatherConditions { get; set; }
         public DbSet<UserEntity> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserEntityConfiguration());
-            modelBuilder.Configurations.Add(new WeatherConditionsEntityConfiguration());
+            modelBuilder.Configurations.Add(new WeatherEntityConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

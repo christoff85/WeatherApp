@@ -130,6 +130,10 @@
     <Compile Include="App_Start\MapperConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\Migrations\201806072145289_RenameWeatherConditionsTable.cs" />
+    <Compile Include="Data\Migrations\201806072145289_RenameWeatherConditionsTable.Designer.cs">
+      <DependentUpon>201806072145289_RenameWeatherConditionsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
@@ -157,15 +161,15 @@
       <DependentUpon>201806062140078_UserNameIsUnique.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\Migrations\Configuration.cs" />
-    <Compile Include="Data\Configurations\WeatherConditionsEntityConfiguration.cs" />
+    <Compile Include="Data\Configurations\WeatherEntityConfiguration.cs" />
     <Compile Include="Data\Configurations\UserEntityConfiguration.cs" />
     <Compile Include="Data\Repositories\SqlUserRepository.cs" />
     <Compile Include="Data\Entities\UserEntity.cs" />
     <Compile Include="Domain\Abstractions\Data\IRepository.cs" />
     <Compile Include="Data\Repositories\SqlBaseRepository.cs" />
-    <Compile Include="Data\Repositories\SqlWeatherConditionsRepository.cs" />
+    <Compile Include="Data\Repositories\SqlWeatherRepository.cs" />
     <Compile Include="Data\WeatherAppContext.cs" />
-    <Compile Include="Data\Entities\WeatherConditionsEntity.cs" />
+    <Compile Include="Data\Entities\WeatherEntity.cs" />
     <Compile Include="Domain\Abstractions\Data\IUserRepository.cs" />
     <Compile Include="Domain\Abstractions\Services\IUserService.cs" />
     <Compile Include="Domain\Abstractions\Data\IWeatherRepository.cs" />
@@ -216,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806062140078_UserNameIsUnique.resx">
       <DependentUpon>201806062140078_UserNameIsUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806072145289_RenameWeatherConditionsTable.resx">
+      <DependentUpon>201806072145289_RenameWeatherConditionsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

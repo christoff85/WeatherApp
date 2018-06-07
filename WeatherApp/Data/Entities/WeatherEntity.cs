@@ -1,6 +1,6 @@
 ﻿namespace WeatherApp.Data.Entities
 {
-    public class WeatherConditionsEntity
+    public class WeatherEntity
     {
         public int Id { get; set; }
         public string Location { get; set; }

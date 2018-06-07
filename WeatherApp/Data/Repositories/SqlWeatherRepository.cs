@@ -5,15 +5,15 @@ using WeatherApp.Domain.Models;
 
 namespace WeatherApp.Data.Repositories
 {
-    public class SqlWeatherConditionsRepository : SqlBaseRepository<Weather, WeatherConditionsEntity>, IWeatherRepository
+    public class SqlWeatherRepository : SqlBaseRepository<Weather, WeatherEntity>, IWeatherRepository
     {
-        public SqlWeatherConditionsRepository(WeatherAppContext context) : base(context)
+        public SqlWeatherRepository(WeatherAppContext context) : base(context)
         {
         }
 
         public Weather FindByCityId(int cityId)
         {
-            var entity = new WeatherConditionsEntity()
+            var entity = new WeatherEntity()
             {
                 Location = "Warsaw",
                 Temperature = 7,
@@ -23,7 +23,7 @@ namespace WeatherApp.Data.Repositories
                 Pressure = 1012
             };
 
-            return Mapper.Map<WeatherConditionsEntity, Weather>(entity);
+            return Mapper.Map<WeatherEntity, Weather>(entity);
         }
     }
 }

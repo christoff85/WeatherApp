@@ -14,7 +14,7 @@ namespace WeatherApp.Data.Migrations
 
         protected override void Seed(WeatherAppContext context)
         {
-            context.WeatherConditions.AddOrUpdate(new WeatherConditionsEntity()
+            context.WeatherConditions.AddOrUpdate(new WeatherEntity()
             {
                 Id = 1,
                 Location = "Warsaw",
