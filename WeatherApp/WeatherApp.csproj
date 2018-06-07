@@ -130,33 +130,37 @@
     <Compile Include="App_Start\MapperConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\Migrations\201806070511121_MoveMigrationFolder.cs" />
+    <Compile Include="Data\Migrations\201806070511121_MoveMigrationFolder.Designer.cs">
+      <DependentUpon>201806070511121_MoveMigrationFolder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806052215483_InitialMigration.cs" />
-    <Compile Include="Migrations\201806052215483_InitialMigration.Designer.cs">
+    <Compile Include="Data\Migrations\201806052215483_InitialMigration.cs" />
+    <Compile Include="Data\Migrations\201806052215483_InitialMigration.Designer.cs">
       <DependentUpon>201806052215483_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806060604013_AddUsers.cs" />
-    <Compile Include="Migrations\201806060604013_AddUsers.Designer.cs">
+    <Compile Include="Data\Migrations\201806060604013_AddUsers.cs" />
+    <Compile Include="Data\Migrations\201806060604013_AddUsers.Designer.cs">
       <DependentUpon>201806060604013_AddUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806060619445_UserTableRestrictions.cs" />
-    <Compile Include="Migrations\201806060619445_UserTableRestrictions.Designer.cs">
+    <Compile Include="Data\Migrations\201806060619445_UserTableRestrictions.cs" />
+    <Compile Include="Data\Migrations\201806060619445_UserTableRestrictions.Designer.cs">
       <DependentUpon>201806060619445_UserTableRestrictions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806060623404_TablesRename.cs" />
-    <Compile Include="Migrations\201806060623404_TablesRename.Designer.cs">
+    <Compile Include="Data\Migrations\201806060623404_TablesRename.cs" />
+    <Compile Include="Data\Migrations\201806060623404_TablesRename.Designer.cs">
       <DependentUpon>201806060623404_TablesRename.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806062140078_UserNameIsUnique.cs" />
-    <Compile Include="Migrations\201806062140078_UserNameIsUnique.Designer.cs">
+    <Compile Include="Data\Migrations\201806062140078_UserNameIsUnique.cs" />
+    <Compile Include="Data\Migrations\201806062140078_UserNameIsUnique.Designer.cs">
       <DependentUpon>201806062140078_UserNameIsUnique.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="Data\Configurations\WeatherConditionsEntityConfiguration.cs" />
     <Compile Include="Data\Configurations\UserEntityConfiguration.cs" />
     <Compile Include="Data\Repositories\SqlUserRepository.cs" />
@@ -202,20 +206,23 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806052215483_InitialMigration.resx">
+    <EmbeddedResource Include="Data\Migrations\201806052215483_InitialMigration.resx">
       <DependentUpon>201806052215483_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060604013_AddUsers.resx">
+    <EmbeddedResource Include="Data\Migrations\201806060604013_AddUsers.resx">
       <DependentUpon>201806060604013_AddUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060619445_UserTableRestrictions.resx">
+    <EmbeddedResource Include="Data\Migrations\201806060619445_UserTableRestrictions.resx">
       <DependentUpon>201806060619445_UserTableRestrictions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060623404_TablesRename.resx">
+    <EmbeddedResource Include="Data\Migrations\201806060623404_TablesRename.resx">
       <DependentUpon>201806060623404_TablesRename.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806062140078_UserNameIsUnique.resx">
+    <EmbeddedResource Include="Data\Migrations\201806062140078_UserNameIsUnique.resx">
       <DependentUpon>201806062140078_UserNameIsUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806070511121_MoveMigrationFolder.resx">
+      <DependentUpon>201806070511121_MoveMigrationFolder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

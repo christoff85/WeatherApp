@@ -10,6 +10,8 @@ namespace WeatherApp.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"Data\Migrations";
+            MigrationsNamespace = @"WeatherApp.Data.Migrations";
         }
 
         protected override void Seed(WeatherAppContext context)
