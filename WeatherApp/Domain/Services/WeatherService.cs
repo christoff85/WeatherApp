@@ -10,11 +10,13 @@ namespace WeatherApp.Domain.Services
     {
         private readonly IWeatherRepository _repository;
         private readonly IWeatherProvider _provider;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public WeatherService(IWeatherRepository repository, IWeatherProvider provider)
+        public WeatherService(IWeatherRepository repository, IWeatherProvider provider, IUnitOfWork unitOfWork)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _provider = provider ?? throw new ArgumentNullException(nameof(provider));
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
         public Weather GetById(int id)
@@ -24,12 +26,21 @@ namespace WeatherApp.Domain.Services
 
         public Weather GetLastStoredWeather(int cityId)
         {
-            return _repository.FindByCityId(cityId);
+            return _repository.GetWeatherByCityId(cityId);
         }
 
         public Weather GetCurrentWeather(int cityId)
         {
-            return _provider.FindByCityId(cityId);
+            var weather = _provider.FindByCityId(cityId);
+
+            if (_repository.WeatherExists(cityId))
+                _repository.Update(weather);
+            else
+                _repository.Create(weather);
+
+            _unitOfWork.SaveChanges();
+
+            return _repository.GetWeatherByCityId(cityId);
         }
     }
 }

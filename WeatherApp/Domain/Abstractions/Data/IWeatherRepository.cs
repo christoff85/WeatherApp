@@ -4,6 +4,7 @@ namespace WeatherApp.Domain.Abstractions.Data
 {
     public interface IWeatherRepository : IRepository<Weather>
     {
-        Weather FindByCityId(int cityId);
+        bool WeatherExists(int cityId);
+        Weather GetWeatherByCityId(int cityId);
     }
 }

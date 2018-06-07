@@ -29,7 +29,8 @@ namespace WeatherApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
-            var newUser = _userService.CreateUser(user);
+            //var newUser = _userService.CreateUser(user);
+            
             return RedirectToAction("Index");
         }
 

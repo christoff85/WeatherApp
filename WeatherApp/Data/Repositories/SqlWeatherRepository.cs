@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
 using WeatherApp.Data.Entities;
 using WeatherApp.Domain.Abstractions.Data;
 using WeatherApp.Domain.Models;
@@ -11,19 +12,15 @@ namespace WeatherApp.Data.Repositories
         {
         }
 
-        public Weather FindByCityId(int cityId)
+        public bool WeatherExists(int cityId)
         {
-            var entity = new WeatherEntity()
-            {
-                Location = "Warsaw",
-                Temperature = 7,
-                MaxTemperature = 15,
-                MinTemperature = 2,
-                Humidity = 81,
-                Pressure = 1012
-            };
+            return Entities.Any(w => w.CityId == cityId);
+        }
 
-            return Mapper.Map<WeatherEntity, Weather>(entity);
+        public Weather GetWeatherByCityId(int cityId)
+        {
+            var entity = Entities.Single(w => w.CityId == cityId);
+            return MapFromEntity(entity);
         }
     }
 }
