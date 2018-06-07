@@ -27,18 +27,25 @@ namespace WeatherApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(User user)
+        public ActionResult Login(UserViewModel userVm)
         {
-            //var newUser = _userService.CreateUser(user);
-            
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var user = _userService.LoginUser(userVm.UserName, userVm.Password);
+                if (user != null)
+                {
+                    Session["User"] = user;
+                    return RedirectToAction("Index");
+                }
+            }
+            return View(userVm);           
         }
 
         // GET: Home
         public ActionResult Index()
         {
-            var model = _weatherService.GetById(1);
-            var result = _weatherService.GetCurrentWeather(2643743);
+            var model = _weatherService.GetLastStoredWeather(2643743);
+            var result = _weatherService.GetCurrentWeather(model);
 
             var viewModel = Mapper.Map<Weather, WeatherViewModel>(result);
 
