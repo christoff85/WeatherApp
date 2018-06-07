@@ -17,6 +17,7 @@ namespace WeatherApp.Data.Migrations
             context.WeatherConditions.AddOrUpdate(new WeatherEntity()
             {
                 Id = 1,
+                CityId = 1,
                 Location = "Warsaw",
                 Humidity = 100,
                 Temperature = 30,
