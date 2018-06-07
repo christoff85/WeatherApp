@@ -9,7 +9,7 @@ namespace WeatherApp.Data.Configurations
         {
             ToTable("Users");
 
-            Property(p => p.Name)
+            Property(p => p.UserName)
                 .IsRequired()
                 .HasMaxLength(50);
 
@@ -17,7 +17,7 @@ namespace WeatherApp.Data.Configurations
                 .IsRequired()
                 .HasMaxLength(100);
 
-            HasIndex(p => p.Name)
+            HasIndex(p => p.UserName)
                 .IsUnique();
         }
     }

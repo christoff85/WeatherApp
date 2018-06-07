@@ -23,13 +23,13 @@ namespace WeatherApp.Domain.Services
 
         public User CreateUser(User user)
         {
-            if(_repository.UserNameExists(user.Name))
+            if(_repository.UserNameExists(user.UserName))
                 throw new InvalidOperationException("User with given username already exist");
 
             _repository.Create(user);
             _unitOfWork.SaveChanges();
 
-            return _repository.GetUserByUserName(user.Name);
+            return _repository.GetUserByUserName(user.UserName);
 
         }
     }

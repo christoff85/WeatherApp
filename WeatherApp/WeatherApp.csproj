@@ -138,6 +138,10 @@
     <Compile Include="Data\Migrations\201806072153477_AddedCityIdToWeatherEntity.Designer.cs">
       <DependentUpon>201806072153477_AddedCityIdToWeatherEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\201806072232108_ChangedColumnNameToUserNameForUserTable.cs" />
+    <Compile Include="Data\Migrations\201806072232108_ChangedColumnNameToUserNameForUserTable.Designer.cs">
+      <DependentUpon>201806072232108_ChangedColumnNameToUserNameForUserTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
@@ -182,6 +186,7 @@
     <Compile Include="Domain\Models\User.cs" />
     <Compile Include="Domain\Services\WeatherService.cs" />
     <Compile Include="Domain\Models\Weather.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IWeatherPathBuilder.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IWeatherJsonDeserializer.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IHttpClient.cs" />
@@ -230,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806072153477_AddedCityIdToWeatherEntity.resx">
       <DependentUpon>201806072153477_AddedCityIdToWeatherEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806072232108_ChangedColumnNameToUserNameForUserTable.resx">
+      <DependentUpon>201806072232108_ChangedColumnNameToUserNameForUserTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

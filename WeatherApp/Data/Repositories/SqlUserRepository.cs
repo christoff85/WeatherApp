@@ -13,12 +13,12 @@ namespace WeatherApp.Data.Repositories
 
         public bool UserNameExists(string userName)
         {
-            return Entities.Any(u => u.Name == userName);
+            return Entities.Any(u => u.UserName == userName);
         }
 
         public User GetUserByUserName(string userName)
         {
-            var entity = Entities.Single(u => u.Name.Equals(userName));
+            var entity = Entities.Single(u => u.UserName.Equals(userName));
             return MapFromEntity(entity);
         }
     }
