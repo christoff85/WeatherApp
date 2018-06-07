@@ -3,6 +3,7 @@
     public class WeatherEntity
     {
         public int Id { get; set; }
+        public int CityId { get; set; }
         public string Location { get; set; }
         public int Temperature { get; set; }
         public int MinTemperature { get; set; }
