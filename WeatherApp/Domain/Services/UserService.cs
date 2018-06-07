@@ -18,14 +18,7 @@ namespace WeatherApp.Domain.Services
 
         public User LoginUser(string userName, string password)
         {
-            //try
-            //{
                 return _repository.GetSingleOrDefault(userName, password);
-            //}
-            //catch (InvalidOperationException)
-            //{
-            //    throw new InvalidOperationException("Your username or password are not correct");
-            //}
         }
 
         public User CreateUser(User user)
