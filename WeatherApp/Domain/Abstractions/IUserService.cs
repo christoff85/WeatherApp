@@ -2,7 +2,7 @@
 
 namespace WeatherApp.Domain.Abstractions
 {
-    interface IUserService
+    public interface IUserService
     {
         User LoginUser(User user);
         User CreateUser(User user);

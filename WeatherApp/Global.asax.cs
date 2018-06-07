@@ -7,6 +7,7 @@ namespace WeatherApp
     {
         protected void Application_Start()
         {
+            ContainerConfig.ConfigureContainer();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             MapperConfig.Initialize();

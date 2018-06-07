@@ -1,18 +1,23 @@
-﻿using System.Configuration;
-using System.Net.Http;
+﻿using System;
 using System.Web.Mvc;
 using AutoMapper;
-using WeatherApp.Data;
-using WeatherApp.Data.Repositories;
+using WeatherApp.Domain.Abstractions;
 using WeatherApp.Domain.Models;
-using WeatherApp.Domain.Services;
 using WeatherApp.ViewModels;
-using WeatherApp.WebServices.WebClient;
 
 namespace WeatherApp.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IUserService _userService;
+        private readonly IWeatherConditionsService _weatherService;
+        private readonly IWeatherConditionsProvider _weatherProvider;
+        public HomeController(IUserService userService, IWeatherConditionsService weatherService, IWeatherConditionsProvider weatherProvider)
+        {
+            _userService = userService ?? throw new ArgumentNullException(nameof(userService));
+            _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
+            _weatherProvider = weatherProvider ?? throw new ArgumentNullException(nameof(weatherProvider));
+        }
         public ActionResult Login()
         {
             return View();
@@ -22,30 +27,17 @@ namespace WeatherApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
-            using (var context = new WeatherAppContext())
-            {
-                var service = new UserService(new SqlUserRepository(context));
-                var newUser = service.CreateUser(user);
-            }
+            var newUser = _userService.CreateUser(user);
             return RedirectToAction("Index");
         }
 
         // GET: Home
         public ActionResult Index()
         {
-            WeatherConditions model;
-            using (var context = new WeatherAppContext())
-            {
-                var service = new WeatherConditionsService(new SqlWeatherConditionsRepository(context));
-                model = service.GetById(1);
-            }
-                
-                    ;
-            var webClient = new OpenWeatherWebClient(
-                new JsonHttpClient(new HttpClient()), new OpenWeatherConditionsJsonDeserializer(), new OpenWeatherPathBuilder(ConfigurationManager.AppSettings["BaseAddress"], ConfigurationManager.AppSettings["ApiKey"]));
-            var result = webClient.FindByCityId(2643743);
+            var model = _weatherService.GetById(1);
+            var result = _weatherProvider.FindByCityId(2643743);
 
-            var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(model);
+            var viewModel = Mapper.Map<WeatherConditions, WeatherConditionsViewModel>(result);
 
             return View(viewModel);
         }

@@ -7,10 +7,12 @@ namespace WeatherApp.Domain.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UserService(IUserRepository repository)
+        public UserService(IUserRepository repository, IUnitOfWork unitOfWork)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
         public User LoginUser(User user)
@@ -24,7 +26,7 @@ namespace WeatherApp.Domain.Services
                 throw new InvalidOperationException("User with given username already exist");
 
             _repository.Add(user);
-            _repository.SaveChanges();
+            _unitOfWork.SaveChanges();
 
             return _repository.GetUserByUserName(user.Name);
 
