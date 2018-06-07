@@ -17,7 +17,7 @@ namespace WeatherApp.Data.Repositories
             Entities = context.Set<TEntity>();
         }
 
-        public void Add(TModel model)
+        public void Create(TModel model)
         {
             var entity = MapFromModel(model);
             Entities.Add(entity);
@@ -60,11 +60,6 @@ namespace WeatherApp.Data.Repositories
 
             Entities.Attach(entity);
             Context.Entry(entity).State = EntityState.Modified;
-        }
-
-        public void SaveChanges()
-        {
-            Context.SaveChanges();
         }
 
         protected TModel MapFromEntity(TEntity entity)

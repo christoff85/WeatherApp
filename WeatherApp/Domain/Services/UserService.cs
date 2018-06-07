@@ -25,7 +25,7 @@ namespace WeatherApp.Domain.Services
             if(_repository.UserNameExists(user.Name))
                 throw new InvalidOperationException("User with given username already exist");
 
-            _repository.Add(user);
+            _repository.Create(user);
             _unitOfWork.SaveChanges();
 
             return _repository.GetUserByUserName(user.Name);

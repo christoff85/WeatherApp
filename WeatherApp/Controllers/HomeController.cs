@@ -12,6 +12,7 @@ namespace WeatherApp.Controllers
         private readonly IUserService _userService;
         private readonly IWeatherConditionsService _weatherService;
         private readonly IWeatherConditionsProvider _weatherProvider;
+
         public HomeController(IUserService userService, IWeatherConditionsService weatherService, IWeatherConditionsProvider weatherProvider)
         {
             _userService = userService ?? throw new ArgumentNullException(nameof(userService));
