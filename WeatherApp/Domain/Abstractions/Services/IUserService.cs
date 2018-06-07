@@ -4,7 +4,7 @@ namespace WeatherApp.Domain.Abstractions.Services
 {
     public interface IUserService
     {
-        User LoginUser(User user);
+        User LoginUser(string userName, string password);
         User CreateUser(User user);
     }
 }

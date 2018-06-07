@@ -16,9 +16,16 @@ namespace WeatherApp.Domain.Services
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
-        public User LoginUser(User user)
+        public User LoginUser(string userName, string password)
         {
-            throw new NotImplementedException();
+            //try
+            //{
+                return _repository.GetSingleOrDefault(userName, password);
+            //}
+            //catch (InvalidOperationException)
+            //{
+            //    throw new InvalidOperationException("Your username or password are not correct");
+            //}
         }
 
         public User CreateUser(User user)
