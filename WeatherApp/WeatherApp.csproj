@@ -130,10 +130,6 @@
     <Compile Include="App_Start\MapperConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\Migrations\201806070511121_MoveMigrationFolder.cs" />
-    <Compile Include="Data\Migrations\201806070511121_MoveMigrationFolder.Designer.cs">
-      <DependentUpon>201806070511121_MoveMigrationFolder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
@@ -220,9 +216,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806062140078_UserNameIsUnique.resx">
       <DependentUpon>201806062140078_UserNameIsUnique.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Data\Migrations\201806070511121_MoveMigrationFolder.resx">
-      <DependentUpon>201806070511121_MoveMigrationFolder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

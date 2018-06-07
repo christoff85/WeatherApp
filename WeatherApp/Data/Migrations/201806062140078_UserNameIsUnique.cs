@@ -1,7 +1,7 @@
-namespace WeatherApp.Migrations
+using System.Data.Entity.Migrations;
+
+namespace WeatherApp.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
-    
     public partial class UserNameIsUnique : DbMigration
     {
         public override void Up()

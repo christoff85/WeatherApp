@@ -1,10 +1,8 @@
-using WeatherApp.Data;
+using System.Data.Entity.Migrations;
 using WeatherApp.Data.Entities;
 
-namespace WeatherApp.Migrations
+namespace WeatherApp.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
-
     internal sealed class Configuration : DbMigrationsConfiguration<WeatherAppContext>
     {
         public Configuration()
