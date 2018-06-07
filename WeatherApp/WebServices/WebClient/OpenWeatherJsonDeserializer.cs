@@ -13,6 +13,7 @@ namespace WeatherApp.WebServices.WebClient
 
             return new Weather()
             {
+                CityId = weatherJson["id"].ToObject<int>(),
                 Location = weatherJson["name"].ToObject<string>(),
                 Temperature = currentWeather["temp"].ToObject<int>(),
                 MaxTemperature = currentWeather["temp_max"].ToObject<int>(),

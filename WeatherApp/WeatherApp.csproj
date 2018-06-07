@@ -134,6 +134,10 @@
     <Compile Include="Data\Migrations\201806072145289_RenameWeatherConditionsTable.Designer.cs">
       <DependentUpon>201806072145289_RenameWeatherConditionsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\201806072153477_AddedCityIdToWeatherEntity.cs" />
+    <Compile Include="Data\Migrations\201806072153477_AddedCityIdToWeatherEntity.Designer.cs">
+      <DependentUpon>201806072153477_AddedCityIdToWeatherEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
@@ -223,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806072145289_RenameWeatherConditionsTable.resx">
       <DependentUpon>201806072145289_RenameWeatherConditionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806072153477_AddedCityIdToWeatherEntity.resx">
+      <DependentUpon>201806072153477_AddedCityIdToWeatherEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
