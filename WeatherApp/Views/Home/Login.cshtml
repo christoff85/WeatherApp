@@ -10,20 +10,20 @@
     <fieldset>
         <legend>Please enter Your Credentials</legend>
         
-        @Html.AntiForgeryToken();
-        @Html.ValidationSummary(true);
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
         
-        @if (@ViewBag.Message != null)  
+        @if (!string.IsNullOrEmpty(Model?.ValidationMessage))  
         {  
-            <div style="border: 1px solid red">  
-                @ViewBag.Message  
-            </div>  
+        <div style="border: 1px solid red">
+            @Model.ValidationMessage
+        </div>  
         }  
         <table>  
             <tr>  
-                <td>@Html.LabelFor(u => u.UserName)</td>  
-                <td>@Html.TextBoxFor(u => u.UserName)</td>  
-                <td>@Html.ValidationMessageFor(u => u.UserName)</td>  
+                <td>@Html.LabelFor(u => u.Username)</td>  
+                <td>@Html.TextBoxFor(u => u.Username)</td>  
+                <td>@Html.ValidationMessageFor(u => u.Username)</td>  
             </tr>  
             <tr>  
                 <td>  

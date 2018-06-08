@@ -29,14 +29,17 @@ namespace WeatherApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(UserLoginViewModel userVm)
         {
+            userVm.ValidationMessage = string.Empty;
             if (ModelState.IsValid)
             {
-                var user = _userService.LoginUser(userVm.UserName, userVm.Password);
+                var user = _userService.LoginUser(userVm.Username, userVm.Password);
                 if (user != null)
                 {
                     Session["User"] = user;
                     return RedirectToAction("Index");
                 }
+
+                userVm.ValidationMessage = "Provided credentials are not correct";
             }
             return View(userVm);           
         }
@@ -50,14 +53,16 @@ namespace WeatherApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(UserRegistrationViewModel userVm)
         {
+            userVm.ValidationMessage = string.Empty;
             if (ModelState.IsValid)
             {
-                var user = _userService.CreateUser(userVm.UserName, userVm.Password);
+                var user = _userService.CreateUser(userVm.Username, userVm.Password);
                 if (user != null)
                 {
                     Session["User"] = user;
                     return RedirectToAction("Index");
                 }
+                userVm.ValidationMessage = "Username already exists";
             }
             return View(userVm);
         }
