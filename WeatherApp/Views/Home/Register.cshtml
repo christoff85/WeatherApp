@@ -1,0 +1,64 @@
+﻿@model WeatherApp.ViewModels.UserRegistrationViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Please enter Your new Credentials</legend>
+
+        @Html.AntiForgeryToken();
+        @Html.ValidationSummary(true);
+
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+        <table>
+            <tr>
+                <td>@Html.LabelFor(u => u.UserName)</td>
+                <td>@Html.TextBoxFor(u => u.UserName)</td>
+                <td>@Html.ValidationMessageFor(u => u.UserName)</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(u => u.Password)
+                </td>
+                <td>
+                    @Html.PasswordFor(u => u.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(u => u.Password)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(u => u.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.PasswordFor(u => u.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(u => u.ConfirmPassword)
+                </td>
+            </tr>
+            <tr>
+                @Html.CheckBoxFor(u => u.IsAdmin)
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Sign Up" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+    @Html.ActionLink("Or click here to get back to login page", "Login")
+}
+

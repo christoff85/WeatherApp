@@ -1,4 +1,4 @@
-﻿@model WeatherApp.ViewModels.UserViewModel
+﻿@model WeatherApp.ViewModels.UserLoginViewModel
 
 @{
     ViewBag.Title = "Login";
@@ -8,7 +8,7 @@
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     <fieldset>
-        <legend>I don't know what it is for</legend>
+        <legend>Please enter Your Credentials</legend>
         
         @Html.AntiForgeryToken();
         @Html.ValidationSummary(true);
@@ -21,30 +21,30 @@
         }  
         <table>  
             <tr>  
-                <td>@Html.LabelFor(a => a.UserName)</td>  
-                <td>@Html.TextBoxFor(a => a.UserName)</td>  
-                <td>@Html.ValidationMessageFor(a => a.UserName)</td>  
+                <td>@Html.LabelFor(u => u.UserName)</td>  
+                <td>@Html.TextBoxFor(u => u.UserName)</td>  
+                <td>@Html.ValidationMessageFor(u => u.UserName)</td>  
             </tr>  
             <tr>  
                 <td>  
-                    @Html.LabelFor(a => a.Password)  
+                    @Html.LabelFor(u => u.Password)  
                 </td>  
                 <td>  
-                    @Html.PasswordFor(a => a.Password)  
+                    @Html.PasswordFor(u => u.Password)  
                 </td>  
                 <td>  
-                    @Html.ValidationMessageFor(a => a.Password)  
+                    @Html.ValidationMessageFor(u => u.Password)  
                 </td>  
             </tr>  
             <tr>  
                 <td></td>  
                 <td>  
-                    <input type="submit" value="Login" />  
+                    <input type="submit" value="Sign In" />  
                 </td>  
                 <td></td>  
             </tr>  
         </table>  
-
     </fieldset>
+    @Html.ActionLink("Or click here to create new account", "Register")
 }
 

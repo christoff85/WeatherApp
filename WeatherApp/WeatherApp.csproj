@@ -142,6 +142,10 @@
     <Compile Include="Data\Migrations\201806072232108_ChangedColumnNameToUserNameForUserTable.Designer.cs">
       <DependentUpon>201806072232108_ChangedColumnNameToUserNameForUserTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\201806080459020_AddConstraintsToWeatherTable.cs" />
+    <Compile Include="Data\Migrations\201806080459020_AddConstraintsToWeatherTable.Designer.cs">
+      <DependentUpon>201806080459020_AddConstraintsToWeatherTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
@@ -186,7 +190,8 @@
     <Compile Include="Domain\Models\User.cs" />
     <Compile Include="Domain\Services\WeatherService.cs" />
     <Compile Include="Domain\Models\Weather.cs" />
-    <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="ViewModels\UserRegistrationViewModel.cs" />
+    <Compile Include="ViewModels\UserLoginViewModel.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IWeatherPathBuilder.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IWeatherJsonDeserializer.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IHttpClient.cs" />
@@ -204,6 +209,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806072232108_ChangedColumnNameToUserNameForUserTable.resx">
       <DependentUpon>201806072232108_ChangedColumnNameToUserNameForUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806080459020_AddConstraintsToWeatherTable.resx">
+      <DependentUpon>201806080459020_AddConstraintsToWeatherTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

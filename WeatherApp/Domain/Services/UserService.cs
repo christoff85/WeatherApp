@@ -21,15 +21,16 @@ namespace WeatherApp.Domain.Services
                 return _repository.GetSingleOrDefault(userName, password);
         }
 
-        public User CreateUser(User user)
+        public User CreateUser(string userName, string password, bool isAdmin)
         {
-            if(_repository.UserNameExists(user.UserName))
-                throw new InvalidOperationException("User with given username already exist");
+            if (_repository.UserNameExists(userName))
+                return null;
 
-            _repository.Create(user);
+
+            _repository.CreateUser(userName, password, isAdmin);
             _unitOfWork.SaveChanges();
 
-            return _repository.GetUserByUserName(user.UserName);
+            return _repository.GetUserByUserName(userName);
 
         }
     }

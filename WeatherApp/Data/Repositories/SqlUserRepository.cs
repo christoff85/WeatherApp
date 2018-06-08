@@ -27,5 +27,17 @@ namespace WeatherApp.Data.Repositories
             var entity = Entities.Single(u => u.UserName.Equals(userName));
             return MapFromEntity(entity);
         }
+
+        public void CreateUser(string userName, string password, bool isAdmin)
+        {
+            var entity = new UserEntity
+            {
+                UserName = userName,
+                Password = password,
+                IsAdmin = isAdmin
+            };
+
+            Entities.Add(entity);
+        }
     }
 }

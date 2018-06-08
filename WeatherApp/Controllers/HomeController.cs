@@ -27,7 +27,7 @@ namespace WeatherApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(UserViewModel userVm)
+        public ActionResult Login(UserLoginViewModel userVm)
         {
             if (ModelState.IsValid)
             {
@@ -41,7 +41,28 @@ namespace WeatherApp.Controllers
             return View(userVm);           
         }
 
-        // GET: Home
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(UserRegistrationViewModel userVm)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = _userService.CreateUser(userVm.UserName, userVm.Password, userVm.IsAdmin);
+                if (user != null)
+                {
+                    Session["User"] = user;
+                    return RedirectToAction("Index");
+                }
+            }
+            return View(userVm);
+        }
+
+
         public ActionResult Index()
         {
             var model = _weatherService.GetLastStoredWeather(2643743);
@@ -51,5 +72,17 @@ namespace WeatherApp.Controllers
 
             return View(viewModel);
         }
+
+
+
+        //public ActionResult AdminPanel()
+        //{
+        //    var model = _weatherService.GetLastStoredWeather(2643743);
+        //    var result = _weatherService.GetCurrentWeather(model);
+
+        //    var viewModel = Mapper.Map<Weather, WeatherViewModel>(result);
+
+        //    return View(viewModel);
+        //}
     }
 }

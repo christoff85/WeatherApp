@@ -5,6 +5,6 @@ namespace WeatherApp.Domain.Abstractions.Services
     public interface IUserService
     {
         User LoginUser(string userName, string password);
-        User CreateUser(User user);
+        User CreateUser(string userName, string password, bool isAdmin);
     }
 }
