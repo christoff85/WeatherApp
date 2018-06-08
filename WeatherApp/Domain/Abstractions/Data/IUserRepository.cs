@@ -7,6 +7,6 @@ namespace WeatherApp.Domain.Abstractions.Data
         User GetSingleOrDefault(string userName, string password);
         bool UserNameExists(string userName);
         User GetUserByUserName(string userName);
-        void CreateUser(string userName, string password, bool isAdmin);
+        void CreateUser(string userName, string password);
     }
 }

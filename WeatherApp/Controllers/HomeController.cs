@@ -52,7 +52,7 @@ namespace WeatherApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = _userService.CreateUser(userVm.UserName, userVm.Password, userVm.IsAdmin);
+                var user = _userService.CreateUser(userVm.UserName, userVm.Password);
                 if (user != null)
                 {
                     Session["User"] = user;

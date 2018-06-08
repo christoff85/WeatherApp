@@ -146,6 +146,10 @@
     <Compile Include="Data\Migrations\201806080459020_AddConstraintsToWeatherTable.Designer.cs">
       <DependentUpon>201806080459020_AddConstraintsToWeatherTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\201806082036253_ChangedPasswordLengthTo255Char.cs" />
+    <Compile Include="Data\Migrations\201806082036253_ChangedPasswordLengthTo255Char.Designer.cs">
+      <DependentUpon>201806082036253_ChangedPasswordLengthTo255Char.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
@@ -247,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806080459020_AddConstraintsToWeatherTable.resx">
       <DependentUpon>201806080459020_AddConstraintsToWeatherTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806082036253_ChangedPasswordLengthTo255Char.resx">
+      <DependentUpon>201806082036253_ChangedPasswordLengthTo255Char.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -28,13 +28,13 @@ namespace WeatherApp.Data.Repositories
             return MapFromEntity(entity);
         }
 
-        public void CreateUser(string userName, string password, bool isAdmin)
+        public void CreateUser(string userName, string password)
         {
             var entity = new UserEntity
             {
                 UserName = userName,
                 Password = password,
-                IsAdmin = isAdmin
+                IsAdmin = false
             };
 
             Entities.Add(entity);
