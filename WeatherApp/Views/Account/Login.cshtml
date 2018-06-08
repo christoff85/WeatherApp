@@ -1,0 +1,50 @@
+﻿@model WeatherApp.ViewModels.UserLoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Please enter Your Credentials</legend>
+        
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        
+        @if (!string.IsNullOrEmpty(Model?.ValidationMessage))  
+        {  
+        <div style="border: 1px solid red">
+            @Model.ValidationMessage
+        </div>  
+        }  
+        <table>  
+            <tr>  
+                <td>@Html.LabelFor(u => u.Username)</td>  
+                <td>@Html.TextBoxFor(u => u.Username)</td>  
+                <td>@Html.ValidationMessageFor(u => u.Username)</td>  
+            </tr>  
+            <tr>  
+                <td>  
+                    @Html.LabelFor(u => u.Password)  
+                </td>  
+                <td>  
+                    @Html.PasswordFor(u => u.Password)  
+                </td>  
+                <td>  
+                    @Html.ValidationMessageFor(u => u.Password)  
+                </td>  
+            </tr>  
+            <tr>  
+                <td></td>  
+                <td>  
+                    <input type="submit" value="Sign In" />  
+                </td>  
+                <td></td>  
+            </tr>  
+        </table>  
+    </fieldset>
+    @Html.ActionLink("Or click here to create new account", "Register")
+}
+

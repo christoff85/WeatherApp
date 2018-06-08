@@ -6,6 +6,6 @@ namespace WeatherApp.Domain.Abstractions.Services
     {
         Weather GetLastStoredWeather(int cityId);
         Weather GetById(int id);
-        Weather GetCurrentWeather(Weather weather);
+        Weather GetCurrentWeather(int weatherId, int cityId);
     }
 }

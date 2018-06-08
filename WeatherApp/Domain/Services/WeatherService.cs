@@ -29,12 +29,12 @@ namespace WeatherApp.Domain.Services
             return _repository.GetSingleOrDefault(cityId);
         }
 
-        public Weather GetCurrentWeather(Weather weather)
+        public Weather GetCurrentWeather(int weatherId, int cityId)
         {
-            var updatedWeather = _provider.FindByCityId(weather.CityId);
-            updatedWeather.Id = weather.Id;
+            var updatedWeather = _provider.FindByCityId(cityId);
+            updatedWeather.Id = weatherId;
 
-            _repository.Update(updatedWeather, weather.Id);
+            _repository.Update(updatedWeather, weatherId);
             _unitOfWork.SaveChanges();
 
             return updatedWeather;

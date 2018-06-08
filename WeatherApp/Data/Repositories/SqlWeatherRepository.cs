@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using AutoMapper;
 using WeatherApp.Data.Entities;
 using WeatherApp.Domain.Abstractions.Data;
 using WeatherApp.Domain.Models;
