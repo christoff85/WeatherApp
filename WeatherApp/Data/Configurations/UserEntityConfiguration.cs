@@ -15,7 +15,7 @@ namespace WeatherApp.Data.Configurations
 
             Property(p => p.Password)
                 .IsRequired()
-                .HasMaxLength(100);
+                .HasMaxLength(255);
 
             HasIndex(p => p.UserName)
                 .IsUnique();
