@@ -8,6 +8,13 @@ namespace WeatherApp.Data.Configurations
         public WeatherEntityConfiguration()
         {
             ToTable("Weather");
+
+            Property(w => w.Location)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            HasIndex(w => w.CityId)
+                .IsUnique();
         }
     }
 }
