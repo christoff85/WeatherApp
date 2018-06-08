@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
 using AutoMapper;
-using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Abstractions.Services;
 using WeatherApp.Domain.Models;
 using WeatherApp.ViewModels;
@@ -10,84 +9,56 @@ namespace WeatherApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IUserService _userService;
         private readonly IWeatherService _weatherService;
-        
 
-        public HomeController(IUserService userService, IWeatherService weatherService, IWeatherProvider weatherProvider)
+        public HomeController(IWeatherService weatherService)
         {
-            _userService = userService ?? throw new ArgumentNullException(nameof(userService));
             _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
-            
         }
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login(UserLoginViewModel userVm)
-        {
-            userVm.ValidationMessage = string.Empty;
-            if (ModelState.IsValid)
-            {
-                var user = _userService.LoginUser(userVm.Username, userVm.Password);
-                if (user != null)
-                {
-                    Session["User"] = user;
-                    return RedirectToAction("Index");
-                }
-
-                userVm.ValidationMessage = "Provided credentials are not correct";
-            }
-            return View(userVm);           
-        }
-
-        public ActionResult Register()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Register(UserRegistrationViewModel userVm)
-        {
-            userVm.ValidationMessage = string.Empty;
-            if (ModelState.IsValid)
-            {
-                var user = _userService.CreateUser(userVm.Username, userVm.Password);
-                if (user != null)
-                {
-                    Session["User"] = user;
-                    return RedirectToAction("Index");
-                }
-                userVm.ValidationMessage = "Username already exists";
-            }
-            return View(userVm);
-        }
-
-
+    
         public ActionResult Index()
         {
-            var model = _weatherService.GetLastStoredWeather(2643743);
-            var result = _weatherService.GetCurrentWeather(model);
+            var user = GetCurrentUser();
 
-            var viewModel = Mapper.Map<Weather, WeatherViewModel>(result);
+            if (user == null)
+                return RedirectToAction("Login", "Account");
+
+            if (user.IsAdmin)
+                return RedirectToAction("AdminPanel");
+
+            var weather = _weatherService.GetLastStoredWeather(2643743);
+            var viewModel = Mapper.Map<Weather, WeatherViewModel>(weather);
 
             return View(viewModel);
         }
 
 
+        public ActionResult AdminPanel()
+        {
+            var user = GetCurrentUser();
 
-        //public ActionResult AdminPanel()
-        //{
-        //    var model = _weatherService.GetLastStoredWeather(2643743);
-        //    var result = _weatherService.GetCurrentWeather(model);
+            if (user == null)
+                return RedirectToAction("Login", "Account");
 
-        //    var viewModel = Mapper.Map<Weather, WeatherViewModel>(result);
+            var weather = _weatherService.GetLastStoredWeather(2643743);
+            var viewModel = Mapper.Map<Weather, WeatherViewModel>(weather);
 
-        //    return View(viewModel);
-        //}
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdminPanel(WeatherViewModel weatherVm)
+        {
+            var updatedWeather = _weatherService.GetCurrentWeather(weatherVm.Id, weatherVm.CityId);
+            var viewModel = Mapper.Map<Weather, WeatherViewModel>(updatedWeather);
+
+            return View(viewModel);
+        }
+
+        private User GetCurrentUser()
+        {
+            return (User) Session["User"];
+        }
     }
 }
