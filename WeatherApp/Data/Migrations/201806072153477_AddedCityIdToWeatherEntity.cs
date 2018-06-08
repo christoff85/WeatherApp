@@ -1,6 +1,5 @@
 namespace WeatherApp.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
     
     public partial class AddedCityIdToWeatherEntity : DbMigration

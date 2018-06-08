@@ -1,5 +1,4 @@
 using System.Data.Entity.Migrations;
-using WeatherApp.Data.Entities;
 
 namespace WeatherApp.Data.Migrations
 {
