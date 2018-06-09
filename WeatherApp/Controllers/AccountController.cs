@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using WeatherApp.Domain.Abstractions.Services;
+using WeatherApp.Resources;
 using WeatherApp.ViewModels;
 
 namespace WeatherApp.Controllers
@@ -24,7 +25,6 @@ namespace WeatherApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(UserLoginViewModel userVm)
         {
-            userVm.ValidationMessage = string.Empty;
             if (ModelState.IsValid)
             {
                 var user = _userService.LoginUser(userVm.Username, userVm.Password);
@@ -34,7 +34,7 @@ namespace WeatherApp.Controllers
                     return RedirectToAction("UserPanel", "Home");
                 }
 
-                userVm.ValidationMessage = "Provided credentials are not correct";
+                ModelState.AddModelError(string.Empty, AccountControllerResources.LoginCredentialsNotCorrect);
             }
             return View(userVm);           
         }
@@ -48,7 +48,6 @@ namespace WeatherApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(UserRegistrationViewModel userVm)
         {
-            userVm.ValidationMessage = string.Empty;
             if (ModelState.IsValid)
             {
                 var user = _userService.CreateUser(userVm.Username, userVm.Password);
@@ -57,7 +56,7 @@ namespace WeatherApp.Controllers
                     Session["User"] = user;
                     return RedirectToAction("UserPanel", "Home");
                 }
-                userVm.ValidationMessage = "Username already exists";
+                ModelState.AddModelError(string.Empty, AccountControllerResources.UsernameAlreadyExists);
             }
             return View(userVm);
         }

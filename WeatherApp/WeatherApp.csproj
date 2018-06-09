@@ -222,6 +222,11 @@
     <Compile Include="Domain\Models\User.cs" />
     <Compile Include="Domain\Services\WeatherService.cs" />
     <Compile Include="Domain\Models\Weather.cs" />
+    <Compile Include="Resources\AccountControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountControllerResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\UserRegistrationViewModel.cs" />
     <Compile Include="ViewModels\UserLoginViewModel.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IWeatherPathBuilder.cs" />
@@ -290,6 +295,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806092208206_AddLondonToWeatherTable.resx">
       <DependentUpon>201806092208206_AddLondonToWeatherTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AccountControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountControllerResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
