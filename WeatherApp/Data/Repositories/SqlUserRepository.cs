@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using WeatherApp.Data.Entities;
 using WeatherApp.Domain.Abstractions.Data;
 using WeatherApp.Domain.Models;
@@ -13,18 +14,19 @@ namespace WeatherApp.Data.Repositories
 
         public User GetSingleOrDefault(string userName, string password)
         {
-            var entity = Entities.SingleOrDefault(u => u.UserName.Equals(userName) && u.Password.Equals(password));
+            var entity = Entities.SingleOrDefault(u => u.UserName.Equals(userName, StringComparison.InvariantCulture) 
+                                                       && u.Password.Equals(password, StringComparison.InvariantCulture));
             return MapFromEntity(entity);
         }
 
         public bool UserNameExists(string userName)
         {
-            return Entities.Any(u => u.UserName.Equals(userName));
+            return Entities.Any(u => u.UserName.Equals(userName, StringComparison.InvariantCulture));
         }
 
         public User GetUserByUserName(string userName)
         {
-            var entity = Entities.Single(u => u.UserName.Equals(userName));
+            var entity = Entities.Single(u => u.UserName.Equals(userName, StringComparison.InvariantCulture));
             return MapFromEntity(entity);
         }
 
