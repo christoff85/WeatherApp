@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using AutoMapper;
 using WeatherApp.Domain.Abstractions.Services;
@@ -51,9 +52,9 @@ namespace WeatherApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AdminPanel(WeatherViewModel weatherVm)
+        public async Task<ActionResult> AdminPanel(WeatherViewModel weatherVm)
         {
-            var updatedWeather = _weatherService.GetCurrentWeather(weatherVm.Id, weatherVm.CityId);
+            var updatedWeather = await _weatherService.GetCurrentWeatherAsync(weatherVm.Id, weatherVm.CityId);
             var viewModel = Mapper.Map<Weather, WeatherViewModel>(updatedWeather);
 
             return View(viewModel);

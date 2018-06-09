@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using WeatherApp.Domain.Abstractions.Data;
 using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Abstractions.Services;
@@ -29,9 +30,9 @@ namespace WeatherApp.Domain.Services
             return _repository.GetSingleOrDefault(cityId);
         }
 
-        public Weather GetCurrentWeather(int weatherId, int cityId)
+        public async Task<Weather> GetCurrentWeatherAsync(int weatherId, int cityId)
         {
-            var updatedWeather = _provider.FindByCityId(cityId);
+            var updatedWeather = await _provider.FindByCityIdAsync(cityId);
             updatedWeather.Id = weatherId;
 
             _repository.Update(updatedWeather, weatherId);

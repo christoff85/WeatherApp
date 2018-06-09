@@ -1,9 +1,10 @@
-﻿using WeatherApp.Domain.Models;
+﻿using System.Threading.Tasks;
+using WeatherApp.Domain.Models;
 
 namespace WeatherApp.Domain.Abstractions.Providers
 {
     public interface IWeatherProvider
     {
-        Weather FindByCityId(int cityId);
+        Task<Weather> FindByCityIdAsync(int cityId);
     }
 }

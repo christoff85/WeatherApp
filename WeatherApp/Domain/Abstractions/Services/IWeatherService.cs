@@ -1,4 +1,5 @@
-﻿using WeatherApp.Domain.Models;
+﻿using System.Threading.Tasks;
+using WeatherApp.Domain.Models;
 
 namespace WeatherApp.Domain.Abstractions.Services
 {
@@ -6,6 +7,6 @@ namespace WeatherApp.Domain.Abstractions.Services
     {
         Weather GetLastStoredWeather(int cityId);
         Weather GetById(int id);
-        Weather GetCurrentWeather(int weatherId, int cityId);
+        Task<Weather> GetCurrentWeatherAsync(int weatherId, int cityId);
     }
 }

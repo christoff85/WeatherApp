@@ -1,9 +1,10 @@
 ﻿using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace WeatherApp.WebServices.WebClient.Abstractions
 {
     public interface IHttpClient
     {
-        HttpResponseMessage Get(string path);
+        Task<HttpResponseMessage> GetAsync(string path);
     }
 }

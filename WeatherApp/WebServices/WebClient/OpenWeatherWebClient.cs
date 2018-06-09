@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Models;
 using WeatherApp.WebServices.WebClient.Abstractions;
@@ -18,11 +19,11 @@ namespace WeatherApp.WebServices.WebClient
             _pathBuilder = pathBuilder ?? throw new ArgumentNullException(nameof(pathBuilder));
         }
 
-        public Weather FindByCityId(int cityId)
+        public async Task<Weather> FindByCityIdAsync(int cityId)
         {
             var query = $"weather?id={cityId}&units=metric";
             var fullPath = _pathBuilder.GetFullPath(query);
-            var response = _httpClient.Get(fullPath);
+            var response = await _httpClient.GetAsync(fullPath);
             var responseContent = response.Content.ReadAsStringAsync().Result;
 
             return _deserializer.Deserialize(responseContent);

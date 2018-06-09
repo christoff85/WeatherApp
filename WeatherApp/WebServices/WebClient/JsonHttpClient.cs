@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using WeatherApp.WebServices.WebClient.Abstractions;
 
 namespace WeatherApp.WebServices.WebClient
@@ -17,9 +18,9 @@ namespace WeatherApp.WebServices.WebClient
             //TODO: add Timeout
         }
 
-        public HttpResponseMessage Get(string path)
+        public async Task<HttpResponseMessage> GetAsync(string path)
         {
-            return _httpClient.GetAsync(path).Result;
+            return await _httpClient.GetAsync(path);
         }
 
     }
