@@ -1,61 +1,102 @@
-﻿@model WeatherApp.ViewModels.UserRegistrationViewModel
+﻿@using System.Web.Optimization
+@model WeatherApp.ViewModels.UserRegistrationViewModel
 
 @{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Register";
 }
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    <fieldset>
-        <legend>Please enter Your new Credentials</legend>
-
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-
-        @if (!string.IsNullOrEmpty(Model?.ValidationMessage))  
-        {  
-            <div style="border: 1px solid red">
-                @Model.ValidationMessage
-            </div>  
-        }
-        <table>
-            <tr>
-                <td>@Html.LabelFor(u => u.Username)</td>
-                <td>@Html.TextBoxFor(u => u.Username)</td>
-                <td>@Html.ValidationMessageFor(u => u.Username)</td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(u => u.Password)
-                </td>
-                <td>
-                    @Html.PasswordFor(u => u.Password)
-                </td>
-                <td>
-                    @Html.ValidationMessageFor(u => u.Password)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(u => u.ConfirmPassword)
-                </td>
-                <td>
-                    @Html.PasswordFor(u => u.ConfirmPassword)
-                </td>
-                <td>
-                    @Html.ValidationMessageFor(u => u.ConfirmPassword)
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" value="Sign Up" />
-                </td>
-                <td></td>
-            </tr>
-        </table>
-    </fieldset>
-    @Html.ActionLink("Or click here to get back to login page", "Login")
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Get back to login page", "Login")
+    </p>
 }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@*@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        <fieldset>
+            <legend>Please enter Your new Credentials</legend>
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @if (!string.IsNullOrEmpty(Model?.ValidationMessage))
+            {
+                <div style="border: 1px solid red">
+                    @Model.ValidationMessage
+                </div>
+            }
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(u => u.Username)</td>
+                    <td>@Html.TextBoxFor(u => u.Username)</td>
+                    <td>@Html.ValidationMessageFor(u => u.Username)</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(u => u.Password)
+                    </td>
+                    <td>
+                        @Html.PasswordFor(u => u.Password)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(u => u.Password)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(u => u.ConfirmPassword)
+                    </td>
+                    <td>
+                        @Html.PasswordFor(u => u.ConfirmPassword)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(u => u.ConfirmPassword)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Sign Up" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </fieldset>
+        
+    }*@
 

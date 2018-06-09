@@ -1,36 +1,33 @@
 ﻿@model WeatherApp.ViewModels.WeatherViewModel
 
 @{
-    Layout = null;
+    ViewBag.Title = "Administrative panel";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-
-    @using (Html.BeginForm("AdminPanel", "Home", FormMethod.Post))
-    {
-    <div>
-        Hi! Todays weather in @Model.Location:
-
-        <ul>
-            <li>Temp: @Model.Temperature</li>
-            <li>pressure: @Model.Pressure</li>
-            <li>humidity: @Model.Humidity</li>
-            <li>temp_min: @Model.MinTemperature</li>
-            <li>temp_max: @Model.MaxTemperature</li>
-        </ul>
-
-        @Html.AntiForgeryToken()
-        @Html.HiddenFor(w => w.Id)
-        @Html.HiddenFor(w => w.CityId)
-        <input type="submit" value="Refresh" />
+<h2>@Model.Location</h2>
+<div class="row">
+    <div class="col-md-8">
+        <div class="form-group">
+            <p>@Html.LabelFor(m => m.Temperature): @Model.Temperature&deg;C</p>
+            <p>
+                <ul>
+                    <li>@Html.LabelFor(m => m.MinTemperature) : @Model.MinTemperature&deg;C</li>
+                    <li>@Html.LabelFor(m => m.MaxTemperature) : @Model.MaxTemperature&deg;C</li>
+                </ul>
+            </p>
+            <p>@Html.LabelFor(m => m.Pressure): @Model.Pressure HPa</p>
+            <p>@Html.LabelFor(m => m.Humidity): @Model.Humidity%</p>
+        </div>
+        <div class="form-group">
+            @using (Html.BeginForm("AdminPanel", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(w => w.Id)
+                @Html.HiddenFor(w => w.CityId)
+                <input type="submit" value="Refresh" class="btn btn-default"/>
+            }
+        </div>
     </div>
-    }
-</body>
-</html>
+</div>
+
