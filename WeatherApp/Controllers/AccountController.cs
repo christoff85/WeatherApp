@@ -31,7 +31,7 @@ namespace WeatherApp.Controllers
                 if (user != null)
                 {
                     Session["User"] = user;
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("UserPanel", "Home");
                 }
 
                 userVm.ValidationMessage = "Provided credentials are not correct";
@@ -55,7 +55,7 @@ namespace WeatherApp.Controllers
                 if (user != null)
                 {
                     Session["User"] = user;
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("UserPanel", "Home");
                 }
                 userVm.ValidationMessage = "Username already exists";
             }

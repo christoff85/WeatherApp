@@ -16,7 +16,7 @@ namespace WeatherApp.Controllers
             _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
         }
     
-        public ActionResult Index()
+        public ActionResult UserPanel()
         {
             var user = GetCurrentUser();
 
