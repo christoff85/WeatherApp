@@ -1,4 +1,6 @@
-﻿namespace WeatherApp.Data.Entities
+﻿using System;
+
+namespace WeatherApp.Data.Entities
 {
     public class WeatherEntity
     {
@@ -10,5 +12,6 @@
         public int MaxTemperature { get; set; }
         public int Pressure { get; set; }
         public int Humidity { get; set; }
+        public DateTime LastUpdate { get; set; }
     }
 }

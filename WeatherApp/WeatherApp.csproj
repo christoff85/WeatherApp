@@ -178,6 +178,10 @@
     <Compile Include="Data\Migrations\201806092208206_AddLondonToWeatherTable.Designer.cs">
       <DependentUpon>201806092208206_AddLondonToWeatherTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\201806092325106_AddLastUpdateToWeatherEntity.cs" />
+    <Compile Include="Data\Migrations\201806092325106_AddLastUpdateToWeatherEntity.Designer.cs">
+      <DependentUpon>201806092325106_AddLastUpdateToWeatherEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
@@ -229,9 +233,11 @@
     </Compile>
     <Compile Include="ViewModels\UserRegistrationViewModel.cs" />
     <Compile Include="ViewModels\UserLoginViewModel.cs" />
+    <Compile Include="WebServices\WebClient\Abstractions\ITimeStampConverter.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IWeatherPathBuilder.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IWeatherJsonDeserializer.cs" />
     <Compile Include="WebServices\WebClient\Abstractions\IHttpClient.cs" />
+    <Compile Include="WebServices\WebClient\UnixTimeStampConverter.cs" />
     <Compile Include="WebServices\WebClient\JsonHttpClient.cs" />
     <Compile Include="WebServices\WebClient\OpenWeatherPathBuilder.cs" />
     <Compile Include="WebServices\WebClient\OpenWeatherJsonDeserializer.cs" />
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806092208206_AddLondonToWeatherTable.resx">
       <DependentUpon>201806092208206_AddLondonToWeatherTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806092325106_AddLastUpdateToWeatherEntity.resx">
+      <DependentUpon>201806092325106_AddLastUpdateToWeatherEntity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AccountControllerResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

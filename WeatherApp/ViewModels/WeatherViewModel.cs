@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace WeatherApp.ViewModels
 {
@@ -19,5 +20,8 @@ namespace WeatherApp.ViewModels
         [DisplayName("Atm. Pressure")]
         public int Pressure { get; set; }
         public int Humidity { get; set; }
+
+        [DisplayName("Updated")]
+        public DateTime LastUpdate { get; set; }
     }
 }

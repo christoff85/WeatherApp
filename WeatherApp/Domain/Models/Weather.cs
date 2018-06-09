@@ -1,4 +1,6 @@
-﻿namespace WeatherApp.Domain.Models
+﻿using System;
+
+namespace WeatherApp.Domain.Models
 {
     public class Weather
     {
@@ -10,5 +12,6 @@
         public int MaxTemperature { get; set; }
         public int Pressure { get; set; }
         public int Humidity { get; set; }
+        public DateTime LastUpdate { get; set; }
     }
 }
