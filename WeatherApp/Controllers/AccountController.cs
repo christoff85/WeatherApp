@@ -60,5 +60,11 @@ namespace WeatherApp.Controllers
             }
             return View(userVm);
         }
+
+        public ActionResult LogOff()
+        {
+            Session["User"] = null;
+            return RedirectToAction("Login");
+        }
     }
 }

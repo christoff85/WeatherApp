@@ -1,0 +1,13 @@
+﻿@model WeatherApp.ViewModels.WeatherViewModel
+
+<div class="form-group">
+    <p>@Html.LabelFor(m => m.Temperature): @Model.Temperature&deg;C</p>
+    <p>
+        <ul>
+            <li>@Html.LabelFor(m => m.MinTemperature) : @Model.MinTemperature&deg;C</li>
+            <li>@Html.LabelFor(m => m.MaxTemperature) : @Model.MaxTemperature&deg;C</li>
+        </ul>
+    </p>
+    <p>@Html.LabelFor(m => m.Pressure): @Model.Pressure HPa</p>
+    <p>@Html.LabelFor(m => m.Humidity): @Model.Humidity%</p>
+</div>

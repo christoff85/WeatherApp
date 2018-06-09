@@ -4,15 +4,9 @@
     ViewBag.Title = "User panel";
 }
 
-<div>
-    Hi! Todays weather in @Model.Location:
-
-    <ul>
-        <li>Temp: @Model.Temperature</li>
-        <li>pressure: @Model.Pressure</li>
-        <li>humidity: @Model.Humidity</li>
-        <li>temp_min: @Model.MinTemperature</li>
-        <li>temp_max: @Model.MaxTemperature</li>
-    </ul>
+<h2>@Model.Location</h2>
+<div class="row">
+    <div class="col-md-8">
+        @Html.Partial("_DisplayWeather")
+    </div>
 </div>
-
