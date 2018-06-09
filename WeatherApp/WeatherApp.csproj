@@ -170,6 +170,14 @@
     <Compile Include="Data\Migrations\201806082036253_ChangedPasswordLengthTo255Char.Designer.cs">
       <DependentUpon>201806082036253_ChangedPasswordLengthTo255Char.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\201806092159376_AddAdminToUserTable.cs" />
+    <Compile Include="Data\Migrations\201806092159376_AddAdminToUserTable.Designer.cs">
+      <DependentUpon>201806092159376_AddAdminToUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\201806092208206_AddLondonToWeatherTable.cs" />
+    <Compile Include="Data\Migrations\201806092208206_AddLondonToWeatherTable.Designer.cs">
+      <DependentUpon>201806092208206_AddLondonToWeatherTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\Data\IUnitOfWork.cs" />
     <Compile Include="Domain\Services\UserService.cs" />
@@ -276,6 +284,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201806082036253_ChangedPasswordLengthTo255Char.resx">
       <DependentUpon>201806082036253_ChangedPasswordLengthTo255Char.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806092159376_AddAdminToUserTable.resx">
+      <DependentUpon>201806092159376_AddAdminToUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201806092208206_AddLondonToWeatherTable.resx">
+      <DependentUpon>201806092208206_AddLondonToWeatherTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

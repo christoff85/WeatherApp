@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Web.Mvc;
 using AutoMapper;
 using WeatherApp.Domain.Abstractions.Services;
@@ -26,7 +27,8 @@ namespace WeatherApp.Controllers
             if (user.IsAdmin)
                 return RedirectToAction("AdminPanel");
 
-            var weather = _weatherService.GetLastStoredWeather(2643743); //Currently hardcoded for single city
+            var cityId = int.Parse(ConfigurationManager.AppSettings["CityId"]);
+            var weather = _weatherService.GetLastStoredWeather(cityId);
             var viewModel = Mapper.Map<Weather, WeatherViewModel>(weather);
 
             return View(viewModel);
@@ -40,7 +42,8 @@ namespace WeatherApp.Controllers
             if (user == null)
                 return RedirectToAction("Login", "Account");
 
-            var weather = _weatherService.GetLastStoredWeather(2643743); //Currently hardcoded for single city
+            var cityId = int.Parse(ConfigurationManager.AppSettings["CityId"]);
+            var weather = _weatherService.GetLastStoredWeather(cityId);
             var viewModel = Mapper.Map<Weather, WeatherViewModel>(weather);
 
             return View(viewModel);
