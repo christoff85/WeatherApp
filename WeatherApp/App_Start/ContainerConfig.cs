@@ -5,8 +5,8 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using WeatherApp.Data;
 using WeatherApp.Domain.Abstractions.Services;
-using WeatherApp.WebServices.WebClient;
-using WeatherApp.WebServices.WebClient.Abstractions;
+using WeatherApp.Providers.WeatherWebClient;
+using WeatherApp.Providers.WeatherWebClient.Abstractions;
 
 namespace WeatherApp
 {

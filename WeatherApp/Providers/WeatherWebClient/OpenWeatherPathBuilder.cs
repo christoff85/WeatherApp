@@ -1,7 +1,7 @@
 ﻿using System;
-using WeatherApp.WebServices.WebClient.Abstractions;
+using WeatherApp.Providers.WeatherWebClient.Abstractions;
 
-namespace WeatherApp.WebServices.WebClient
+namespace WeatherApp.Providers.WeatherWebClient
 {
     public class OpenWeatherPathBuilder : IWeatherPathBuilder
     {
@@ -16,7 +16,7 @@ namespace WeatherApp.WebServices.WebClient
 
         public string GetFullPath(string query)
         {
-            return $"{_baseAddress}{query}&APPID={_apiKey}";
+            return $"{_baseAddress}{query}{_apiKey}";
         }
     }
 }

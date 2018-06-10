@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Models;
-using WeatherApp.WebServices.WebClient.Abstractions;
+using WeatherApp.Providers.WeatherWebClient.Abstractions;
 
-namespace WeatherApp.WebServices.WebClient
+namespace WeatherApp.Providers.WeatherWebClient
 {
     public class OpenWeatherWebClient : IWeatherProvider
     {

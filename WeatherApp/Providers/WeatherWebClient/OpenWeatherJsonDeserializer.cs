@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
 using WeatherApp.Domain.Models;
-using WeatherApp.WebServices.WebClient.Abstractions;
+using WeatherApp.Providers.WeatherWebClient.Abstractions;
 
-namespace WeatherApp.WebServices.WebClient
+namespace WeatherApp.Providers.WeatherWebClient
 {
     public class OpenWeatherJsonDeserializer : IWeatherJsonDeserializer
     {

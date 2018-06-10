@@ -1,9 +1,9 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using WeatherApp.WebServices.WebClient.Abstractions;
+using WeatherApp.Providers.WeatherWebClient.Abstractions;
 
-namespace WeatherApp.WebServices.WebClient
+namespace WeatherApp.Providers.WeatherWebClient
 {
     public class JsonHttpClient : IHttpClient
     {
