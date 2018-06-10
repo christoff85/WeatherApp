@@ -5,10 +5,16 @@ namespace WeatherApp.Providers.WeatherWebClient
 {
     internal class UnixTimeStampConverter : ITimeStampConverter
     {
-        public DateTime ConvertToDateTime(double timestamp)
+        private DateTime _timeStampBaseDate;
+
+        public UnixTimeStampConverter(DateTime timeStampBaseDate)
         {
-            var converted = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            converted = converted.AddSeconds(timestamp).ToLocalTime();
+            _timeStampBaseDate = timeStampBaseDate;
+        }
+
+        public DateTime ConvertToLocalDateTime(double timestamp)
+        {
+            var converted = _timeStampBaseDate.AddSeconds(timestamp).ToLocalTime();
             return converted;
         }
     }

@@ -27,7 +27,7 @@ namespace WeatherApp.Providers.WeatherWebClient
                 MinTemperature = currentWeather["temp_min"].ToObject<int>(),
                 Humidity = currentWeather["humidity"].ToObject<int>(),
                 Pressure = currentWeather["pressure"].ToObject<int>(),
-                LastUpdate = _converter.ConvertToDateTime(timeStamp)
+                LastUpdate = _converter.ConvertToLocalDateTime(timeStamp)
             };
         }
     }

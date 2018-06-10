@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Net.Http;
 using System.Web.Mvc;
 using Autofac;
@@ -21,6 +22,7 @@ namespace WeatherApp
             builder.RegisterAssemblyTypes(typeof(IUserService).Assembly).AsImplementedInterfaces().InstancePerRequest();
             builder.RegisterType<WeatherAppContext>().InstancePerRequest();
             builder.RegisterType<HttpClient>().InstancePerRequest();
+            builder.Register(o => new UnixTimeStampConverter(new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc))).As<ITimeStampConverter>();
             builder.Register(o => new WeatherPathBuilder(ConfigurationManager.AppSettings["BaseAddress"],
                 ConfigurationManager.AppSettings["ApiKey"])).As<IWeatherPathBuilder>();
 
