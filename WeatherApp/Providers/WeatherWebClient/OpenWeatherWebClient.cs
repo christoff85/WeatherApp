@@ -23,8 +23,7 @@ namespace WeatherApp.Providers.WeatherWebClient
         {
             var query = $"weather?id={cityId}&units=metric";
             var fullPath = _pathBuilder.GetFullPath(query);
-            var response = await _httpClient.GetAsync(fullPath);
-            var responseContent = response.Content.ReadAsStringAsync().Result;
+            var responseContent = await _httpClient.GetResponseContentAsync(fullPath);
 
             return _deserializer.Deserialize(responseContent);
         }

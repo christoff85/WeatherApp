@@ -5,6 +5,6 @@ namespace WeatherApp.Providers.Abstractions.WeatherWebClient
 {
     public interface IHttpClient
     {
-        Task<HttpResponseMessage> GetAsync(string path);
+        Task<string> GetResponseContentAsync(string path);
     }
 }

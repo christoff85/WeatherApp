@@ -18,9 +18,10 @@ namespace WeatherApp.Providers.WeatherWebClient
             //TODO: add Timeout
         }
 
-        public async Task<HttpResponseMessage> GetAsync(string path)
+        public async Task<string> GetResponseContentAsync(string path)
         {
-            return await _httpClient.GetAsync(path);
+            var response = await _httpClient.GetAsync(path);
+            return await response.Content.ReadAsStringAsync();
         }
 
     }
