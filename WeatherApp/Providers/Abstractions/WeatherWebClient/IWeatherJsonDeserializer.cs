@@ -1,6 +1,6 @@
 ﻿using WeatherApp.Domain.Models;
 
-namespace WeatherApp.Providers.WeatherWebClient.Abstractions
+namespace WeatherApp.Providers.Abstractions.WeatherWebClient
 {
     public interface IWeatherJsonDeserializer
     {

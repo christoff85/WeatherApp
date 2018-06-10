@@ -1,4 +1,4 @@
-﻿namespace WeatherApp.Providers.WeatherWebClient.Abstractions
+﻿namespace WeatherApp.Providers.Abstractions.WeatherWebClient
 {
     public interface IWeatherPathBuilder
     {

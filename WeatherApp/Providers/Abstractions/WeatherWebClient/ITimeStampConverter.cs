@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeatherApp.Providers.WeatherWebClient.Abstractions
+namespace WeatherApp.Providers.Abstractions.WeatherWebClient
 {
     public interface ITimeStampConverter
     {

@@ -233,13 +233,13 @@
     </Compile>
     <Compile Include="ViewModels\UserRegistrationViewModel.cs" />
     <Compile Include="ViewModels\UserLoginViewModel.cs" />
-    <Compile Include="Providers\WeatherWebClient\Abstractions\ITimeStampConverter.cs" />
-    <Compile Include="Providers\WeatherWebClient\Abstractions\IWeatherPathBuilder.cs" />
-    <Compile Include="Providers\WeatherWebClient\Abstractions\IWeatherJsonDeserializer.cs" />
-    <Compile Include="Providers\WeatherWebClient\Abstractions\IHttpClient.cs" />
+    <Compile Include="Providers\Abstractions\WeatherWebClient\ITimeStampConverter.cs" />
+    <Compile Include="Providers\Abstractions\WeatherWebClient\IWeatherPathBuilder.cs" />
+    <Compile Include="Providers\Abstractions\WeatherWebClient\IWeatherJsonDeserializer.cs" />
+    <Compile Include="Providers\Abstractions\WeatherWebClient\IHttpClient.cs" />
     <Compile Include="Providers\WeatherWebClient\UnixTimeStampConverter.cs" />
     <Compile Include="Providers\WeatherWebClient\JsonHttpClient.cs" />
-    <Compile Include="Providers\WeatherWebClient\OpenWeatherPathBuilder.cs" />
+    <Compile Include="Providers\WeatherWebClient\WeatherPathBuilder.cs" />
     <Compile Include="Providers\WeatherWebClient\OpenWeatherJsonDeserializer.cs" />
     <Compile Include="Providers\WeatherWebClient\OpenWeatherWebClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

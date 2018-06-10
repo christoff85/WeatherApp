@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using WeatherApp.Domain.Abstractions.Providers;
 using WeatherApp.Domain.Models;
-using WeatherApp.Providers.WeatherWebClient.Abstractions;
+using WeatherApp.Providers.Abstractions.WeatherWebClient;
 
 namespace WeatherApp.Providers.WeatherWebClient
 {

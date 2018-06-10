@@ -5,8 +5,8 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using WeatherApp.Data;
 using WeatherApp.Domain.Abstractions.Services;
+using WeatherApp.Providers.Abstractions.WeatherWebClient;
 using WeatherApp.Providers.WeatherWebClient;
-using WeatherApp.Providers.WeatherWebClient.Abstractions;
 
 namespace WeatherApp
 {
@@ -21,7 +21,7 @@ namespace WeatherApp
             builder.RegisterAssemblyTypes(typeof(IUserService).Assembly).AsImplementedInterfaces().InstancePerRequest();
             builder.RegisterType<WeatherAppContext>().InstancePerRequest();
             builder.RegisterType<HttpClient>().InstancePerRequest();
-            builder.Register(o => new OpenWeatherPathBuilder(ConfigurationManager.AppSettings["BaseAddress"],
+            builder.Register(o => new WeatherPathBuilder(ConfigurationManager.AppSettings["BaseAddress"],
                 ConfigurationManager.AppSettings["ApiKey"])).As<IWeatherPathBuilder>();
 
         var container = builder.Build();

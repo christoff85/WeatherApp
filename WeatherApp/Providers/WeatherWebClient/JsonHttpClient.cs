@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using WeatherApp.Providers.WeatherWebClient.Abstractions;
+using WeatherApp.Providers.Abstractions.WeatherWebClient;
 
 namespace WeatherApp.Providers.WeatherWebClient
 {
