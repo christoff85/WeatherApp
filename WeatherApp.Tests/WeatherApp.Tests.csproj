@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Providers\WeatherWebClient\OpenWeatherJsonDeserializerTests.cs" />
     <Compile Include="Providers\WeatherWebClient\UnixTimeStampConverterTests.cs" />
     <Compile Include="Providers\WeatherWebClient\WeatherPathBuilderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
