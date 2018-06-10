@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Services\UserServiceTests.cs" />
+    <Compile Include="Domain\Services\WeatherServiceTests.cs" />
     <Compile Include="Providers\WeatherWebClient\OpenWeatherJsonDeserializerTests.cs" />
     <Compile Include="Providers\WeatherWebClient\OpenWeatherWebClientTests.cs" />
     <Compile Include="Providers\WeatherWebClient\UnixTimeStampConverterTests.cs" />
