@@ -1,11 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NSubstitute;
-using WeatherApp.Domain.Models;
 using WeatherApp.Providers.Abstractions.WeatherWebClient;
 using WeatherApp.Providers.WeatherWebClient;
 
