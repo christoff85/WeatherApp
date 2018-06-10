@@ -49,15 +49,6 @@ namespace WeatherApp.Controllers
             return View(viewModel);
         }
 
-        private WeatherViewModel GetLastStoredWeather()
-        {
-            var cityId = int.Parse(ConfigurationManager.AppSettings["CityId"]);
-            var weather = _weatherService.GetLastStoredWeather(cityId);
-            var viewModel = Mapper.Map<Weather, WeatherViewModel>(weather);
-
-            return viewModel;
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> AdminPanel(WeatherViewModel weatherVm)
@@ -71,6 +62,15 @@ namespace WeatherApp.Controllers
         private User GetCurrentUser()
         {
             return (User) Session["User"];
+        }
+
+        private WeatherViewModel GetLastStoredWeather()
+        {
+            var cityId = int.Parse(ConfigurationManager.AppSettings["CityId"]);
+            var weather = _weatherService.GetLastStoredWeather(cityId);
+            var viewModel = Mapper.Map<Weather, WeatherViewModel>(weather);
+
+            return viewModel;
         }
     }
 }
