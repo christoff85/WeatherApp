@@ -28,9 +28,7 @@ namespace WeatherApp.Controllers
             if (user.IsAdmin)
                 return RedirectToAction("AdminPanel");
 
-            var cityId = int.Parse(ConfigurationManager.AppSettings["CityId"]);
-            var weather = _weatherService.GetLastStoredWeather(cityId);
-            var viewModel = Mapper.Map<Weather, WeatherViewModel>(weather);
+            var viewModel = GetLastStoredWeather();
 
             return View(viewModel);
         }
@@ -43,11 +41,21 @@ namespace WeatherApp.Controllers
             if (user == null)
                 return RedirectToAction("Login", "Account");
 
+            if (!user.IsAdmin)
+                RedirectToAction("UserPanel");
+
+            var viewModel = GetLastStoredWeather();
+
+            return View(viewModel);
+        }
+
+        private WeatherViewModel GetLastStoredWeather()
+        {
             var cityId = int.Parse(ConfigurationManager.AppSettings["CityId"]);
             var weather = _weatherService.GetLastStoredWeather(cityId);
             var viewModel = Mapper.Map<Weather, WeatherViewModel>(weather);
 
-            return View(viewModel);
+            return viewModel;
         }
 
         [HttpPost]

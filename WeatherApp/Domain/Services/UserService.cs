@@ -18,7 +18,7 @@ namespace WeatherApp.Domain.Services
 
         public User LoginUser(string userName, string password)
         {
-                return _repository.GetSingleOrDefault(userName, password);
+            return _repository.GetSingleOrDefault(userName, password);
         }
 
         public User CreateUser(string userName, string password)
@@ -26,12 +26,10 @@ namespace WeatherApp.Domain.Services
             if (_repository.UserNameExists(userName))
                 return null;
 
-
             _repository.CreateUser(userName, password);
             _unitOfWork.SaveChanges();
 
             return _repository.GetUserByUserName(userName);
-
         }
     }
 }
